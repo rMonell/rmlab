@@ -1,0 +1,70 @@
+$units: 'vw', 'vh', 'em';
+
+@for $i from 1 through 20 {
+	$value: $i * 5;
+
+	.w-#{$value} {
+		width: $value * 1%;
+
+		@each $unit in $units {
+			&-#{$unit} { width: #{$value}#{$unit} }
+		}
+	}
+
+	@include medias('w-#{$value}') { width: $value * 1% }
+	@each $unit in $units {	@include medias('w-#{$value}-#{$unit}') { width: #{$value}#{$unit} } }
+}
+
+.w-auto { width: auto }
+
+@for $i from 1 through 20 {
+	$value: $i * 5;
+
+	.mw-#{$value} {
+		max-width: $value * 1%;
+
+		@each $unit in $units {
+			&-#{$unit} { max-width: #{$value}#{$unit} }
+		}
+	}
+
+	@include medias('mw-#{$value}') { max-width: $value * 1% }
+	@each $unit in $units {	@include medias('mw-#{$value}-#{$unit}') { max-width: #{$value}#{$unit} }	}
+}
+
+.mw-auto { max-width: auto }
+
+
+
+
+@for $i from 1 through 20 {
+	$value: $i * 5;
+
+	.h-#{$value} {
+		height: $value * 1%;
+
+		@each $unit in $units {
+			&-#{$unit} { height: #{$value}#{$unit} }
+		}
+	}
+
+	@include medias('h-#{$value}') { height: $value * 1% }
+	@each $unit in $units {	@include medias('h-#{$value}-#{$unit}') { height: #{$value}#{$unit} }	}
+}
+
+.h-auto { height: auto }
+
+@for $i from 1 through 20 {
+	$value: $i * 5;
+
+	.mh-#{$value} {
+		max-height: $value * 1%;
+
+		@each $unit in $units {
+			&-#{$unit} { max-height: #{$value}#{$unit} }
+		}
+	}
+
+	@include medias('mh-#{$value}') { max-height: $value * 1% }
+	@each $unit in $units {	@include medias('mh-#{$value}-#{$unit}') { max-height: #{$value}#{$unit} }	}
+}

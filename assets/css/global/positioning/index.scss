@@ -1,0 +1,7 @@
+.index {
+	@for $i from 1 through 60 {
+		$value: $i * 10;
+
+		&-#{$value} { z-index: $value * 1 }
+	}
+}

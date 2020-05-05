@@ -1,0 +1,161 @@
+/********************
+* Margins
+*/
+
+.m-auto { margin: auto }
+
+.mh-auto {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.mh-auto {
+	margin-top: auto;
+	margin-bottom: auto;
+}
+
+.mt-auto { margin-top: auto }
+.mr-auto { margin-right: auto }
+.mb-auto { margin-bottom: auto }
+.ml-auto { margin-left: auto }
+
+@each $prefix, $size in $sizes {
+	.m-#{$prefix} { margin: $size }
+
+	.mh-#{$prefix} {
+		margin-left: $size;
+		margin-right: $size;
+	}
+
+	.mv-#{$prefix} {
+		margin-top: $size;
+		margin-bottom: $size;
+	}
+	
+	.mt-#{$prefix} { margin-top: $size }
+	.mr-#{$prefix} { margin-right: $size }
+	.mb-#{$prefix} { margin-bottom: $size }
+	.ml-#{$prefix} { margin-left: $size }
+
+	@include medias('m-#{$prefix}') { margin: $size }
+
+	@include medias('mh-#{$prefix}') {
+		margin-left: $size;
+		margin-right: $size;
+	}
+
+	@include medias('mv-#{$prefix}') {
+		margin-top: $size;
+		margin-bottom: $size;
+	}
+
+	@include medias('mt-#{$prefix}') { margin-top: $size }
+	@include medias('mr-#{$prefix}') { margin-right: $size }
+	@include medias('mb-#{$prefix}') { margin-bottom: $size }
+	@include medias('ml-#{$prefix}') { margin-left: $size }
+}
+
+
+
+
+/********************
+* Paddings
+*/
+
+@each $prefix, $size in $sizes {
+	.p-#{$prefix} { padding: $size }
+	
+	.ph-#{$prefix} {
+		padding-left: $size;
+		padding-right: $size;
+	}
+	
+	.pv-#{$prefix} {
+		padding-top: $size;
+		padding-bottom: $size;
+	}
+
+	.pt-#{$prefix} { padding-top: $size }
+	.pr-#{$prefix} { padding-right: $size }
+	.pb-#{$prefix} { padding-bottom: $size }
+	.pl-#{$prefix} { padding-left: $size }
+
+	@include medias('p-#{$prefix}') { padding: $size }
+
+	@include medias('ph-#{$prefix}') {
+		padding-left: $size;
+		padding-right: $size;
+	}
+
+	@include medias('pv-#{$prefix}') {
+		padding-top: $size;
+		padding-bottom: $size;
+	}
+
+	@include medias('pt-#{$prefix}') { padding-top: $size }
+	@include medias('pr-#{$prefix}') { padding-right: $size }
+	@include medias('pb-#{$prefix}') { padding-bottom: $size }
+	@include medias('pl-#{$prefix}') { padding-left: $size }
+}
+
+
+
+
+/********************
+* Margin boxes
+*/
+
+@each $prefix, $size in $sizes {
+	.mbox {
+		&-t#{$prefix} > * {
+			margin-top: $size;
+			&:last-child { margin-top: 0 }
+		}
+
+		&-r#{$prefix} > * {
+			margin-right: $size;
+			&:last-child { margin-right: 0 }
+		}
+
+		&-b#{$prefix} > * {
+			margin-bottom: $size;
+			&:last-child { margin-bottom: 0 }
+		}
+
+		&-l#{$prefix} > * {
+			margin-left: $size;
+			&:last-child { margin-left: 0 }
+		}
+	}
+}
+
+
+
+
+/********************
+* Padding boxes
+*/
+
+.pbox {
+	@each $prefix, $size in $sizes {
+		&-t#{$prefix} > * {
+			padding-top: $size;
+			&:last-child { margin-top: 0 }
+		}
+
+		&-r#{$prefix} > * {
+			padding-right: $size;
+			&:last-child { margin-right: 0 }
+		}
+
+		&-b#{$prefix} > * {
+			padding-bottom: $size;
+			&:last-child { margin-bottom: 0 }
+		}
+
+		&-l#{$prefix} > * {
+			padding-left: $size;
+			&:last-child { margin-left: 0 }
+		}
+	}
+}
