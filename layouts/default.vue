@@ -26,5 +26,10 @@ export default {
   components: {
     Header, Menu, ScrollView
   },
+
+  mounted() {
+    const index = this.$store.state.section.tree.indexOf($nuxt.$route.path)
+    this.$store.commit('section/set', index)
+  }
 }
 </script>

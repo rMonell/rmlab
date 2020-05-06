@@ -1,5 +1,6 @@
 export const state = () => ({
-    index: 0
+    index: 0,
+    tree: ['/', '/about']
 })
 
 export const mutations = {
@@ -8,5 +9,8 @@ export const mutations = {
     },
     decrement (state) {
         state.index--
+    },
+    set (state, index) {
+        state.index = index
     }
 }

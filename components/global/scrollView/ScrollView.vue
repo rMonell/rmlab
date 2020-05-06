@@ -15,14 +15,13 @@ import { TimelineLite, Expo } from 'gsap'
 export default {
     data () {
       return {
-          isScrolling: false,
-          routeTree: ['/', '/about']
+          isScrolling: false
       }
     },
 
     methods: {
         navigateToIndex(index) {
-            const nextRoute = this.routeTree[index]
+            const nextRoute = this.$store.state.section.tree[index]
             this.$router.push(nextRoute)
         },
 
