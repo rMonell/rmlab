@@ -1,14 +1,15 @@
 <template>
   <div class="h-100 flex-row justify-center items-center">
-    <div class="align-center">
-      <h1 class="font-hero-700 uppercase">Renaud Monell</h1>
-      <h2 class="font-l-400">Développeur front-end</h2>
-    </div>
+    <Hero />
   </div>
 </template>
 
 <script>
-export default {
+import Hero from '~/components/hero/Hero.vue'
 
+export default {
+  components: {
+    Hero
+  },
 }
 </script>

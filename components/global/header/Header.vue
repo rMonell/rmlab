@@ -6,8 +6,8 @@
 </template>
 
 <script>
-import Logo from '~/components/header/Logo.vue'
-import Burger from '~/components/header/Burger.vue'
+import Logo from '~/components/global/header/Logo.vue'
+import Burger from '~/components/global/header/Burger.vue'
 
 export default {
   components: {
