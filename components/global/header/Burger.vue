@@ -9,8 +9,31 @@
         position: relative;
         width: 50px;
         height: 50px;
-        background-color: currentColor;
+        border: 2px solid;
+        cursor: pointer;
     }
+
+    .burger:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: currentColor;
+        mix-blend-mode: hard-light;
+        transform-origin: bottom;
+        transition: transform .3s ease;
+        transform: scale3d(1, 0, 1);
+    }
+
+    .burger:hover:before {
+        transform-origin: top;
+        transform: scale3d(1, 1, 1);
+    }
+
+    .burger:not(.active):hover > span:before { transform: translateY(-5px) }
+    .burger:not(.active):hover > span:after { transform: translateY(5px) }
 
     .burger.active > span { background-color: transparent }
     .burger.active > span:before { transform: translateY(0) rotate(-45deg) }
@@ -28,7 +51,6 @@
         width: 22px;
         height: 2px;
         background-color: currentColor;
-        mix-blend-mode: difference;
         transition: all .3s ease;
     }
 

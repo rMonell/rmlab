@@ -1,8 +1,12 @@
 <template>
-  <main class="overflow-hidden w-100 h-100-vh p-l">
+  <main class="overflow-hidden w-100 h-100-vh">
     <Menu />
     <Header />
-    <nuxt />
+    <ScrollView>
+      <div class="index-10">
+        <nuxt />
+      </div>
+    </ScrollView>
   </main>
 </template>
 
@@ -16,10 +20,11 @@
 <script>
 import Header from '~/components/global/header/Header.vue'
 import Menu from '~/components/global/menu/Menu.vue'
+import ScrollView from '~/components/global/scrollView/ScrollView.vue'
 
 export default {
   components: {
-    Header, Menu
+    Header, Menu, ScrollView
   },
 }
 </script>

@@ -1,30 +1,32 @@
 <template>
-    <div class="menu w-100 h-100-vh position-absolute-tl index-500">
+    <nav class="menu w-100 h-100-vh position-absolute-tl index-500">
         <ul>
             <li v-for="item in items" :key="item.path">
-                <nuxt-link to="item.path">{{ item.value }}</nuxt-link>
+                <nuxt-link :to="item.path">{{ item.value }}</nuxt-link>
             </li>
         </ul>
-    </div>
+    </nav>
 </template>
 
 <script>
 export default {
-    data: {
-        items: [
-            {
-                path: '/about',
-                value: 'À propos'
-            },
-            {
-                path: '/projects',
-                value: 'Mes projets'
-            },
-            {
-                path: '/contact',
-                value: 'Me contacter'
-            }
-        ]
+    data () {
+        return {
+            items: [
+                {
+                    path: '/about',
+                    value: 'À propos'
+                },
+                {
+                    path: '/projects',
+                    value: 'Mes projets'
+                },
+                {
+                    path: '/contact',
+                    value: 'Me contacter'
+                }
+            ]
+        }
     }
 }
 </script>

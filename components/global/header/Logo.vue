@@ -9,7 +9,7 @@
 
 <style>
   svg {
-    max-width: 32px;
+    max-width: 36px;
   }
 
   svg g {
