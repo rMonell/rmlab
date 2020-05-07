@@ -15,7 +15,7 @@ import { TimelineLite, Expo } from 'gsap'
 export default {
     data () {
       return {
-          isScrolling: false
+          isScrolling: false,
       }
     },
 
@@ -33,25 +33,29 @@ export default {
             const oppositeDirection = direction === 'bottom' ? 'top' : 'bottom'
 
             overlay.style[oppositeDirection] = 0
+            overlay.style[direction] = 'initial'
             
             timeline.to(overlay, .75, { height: '100%',  ease: easing, onComplete: () => this.navigateToIndex(index) })
-            timeline.to(overlay, .75, { height: '0', [direction]: 0, [oppositeDirection]: 'initial', ease: easing })
+            timeline.to(overlay, .75, { height: '0', [direction]: 0, [oppositeDirection]: 'initial', ease: easing, onComplete: () => this.isScrolling = false })
         },
 
-        next() {
-            this.$store.commit('section/increment')
+        next(index, tree) {
+            index >= tree.length - 1 ? this.$store.commit('section/set', 0) : this.$store.commit('section/increment')
+
             this.playTimeline('bottom', this.$store.state.section.index)
         },
 
-        prev() {
-            this.$store.commit('section/decrement')
+        prev(index, tree) {
+            index <= 0 ? this.$store.commit('section/set', tree.length - 1) : this.$store.commit('section/decrement')
+            
             this.playTimeline('top', this.$store.state.section.index)
         },
         
         handleScroll (event) {
-            if(!this.isScrolling) {
-                event.deltaY > 0 ? this.next() : this.prev()
-            }
+            const index = this.$store.state.section.index
+            const tree = this.$store.state.section.tree
+
+            if (!this.isScrolling) event.deltaY > 0 ? this.next(index, tree) : this.prev(index, tree)
 
             this.isScrolling = true
         }
