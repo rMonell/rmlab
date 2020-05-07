@@ -19,31 +19,38 @@
                 :delay=".15"
             />
         </div>
-        <div class="scroll-container mt-m flex-column justify-end items-center cursor-pointer position-absolute-b pb-l">
-            <span class="fill mb-t" />
-            <span class="font-m">Scroll</span>
+        <div class="mt-m flex-column justify-end items-center cursor-pointer position-absolute-b pb-l">
+            <MagicFill
+                width="1px"
+                className="mb-t"
+
+                from="0px"
+                to="60px"
+                target="height"
+                :duration=".75"
+                :delay=".5"
+            />
+            
+            <MagicTitle
+                value="Scroll"
+                tag="span"
+                className="font-m"
+
+                from="bottom"
+                to="initialY"
+                :delay=".15"
+            />
         </div>
     </div>
 </template>
 
 <script>
 import MagicTitle from '~/components/global/super/MagicTitle.vue'
+import MagicFill from '~/components/global/super/MagicFill.vue'
 
 export default {
     components: {
-        MagicTitle
+        MagicTitle, MagicFill
     },
 }
 </script>
-
-<style>
-    .fill {
-        display: block;
-        height: 60px;
-        width: 1px;
-        background-color: currentColor;
-        transition: height .3s ease;
-    }
-    
-    .scroll-container:hover .fill { height: 40px }
-</style>

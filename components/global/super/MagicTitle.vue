@@ -1,6 +1,6 @@
 <template>
     <div class="overflow-hidden">
-        <component ref="title" :is="tag" :class="className">{{ value }}</component>
+        <component ref="title" :is="tag" :class="'block ' + className">{{ value }}</component>
     </div>
 </template>
 
