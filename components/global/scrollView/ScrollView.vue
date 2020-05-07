@@ -1,6 +1,6 @@
 <template>
     <section
-        class="w-100 h-100-vh flex-row justify-center items-center p-l"
+        class="w-100 h-100-vh flex-row justify-center items-center p-l index-n1 position-relative"
         @wheel="handleScroll"
     >
         <slot />
@@ -41,13 +41,11 @@ export default {
 
         next(index, tree) {
             index >= tree.length - 1 ? this.$store.commit('section/set', 0) : this.$store.commit('section/increment')
-
             this.playTimeline('bottom', this.$store.state.section.index)
         },
 
         prev(index, tree) {
             index <= 0 ? this.$store.commit('section/set', tree.length - 1) : this.$store.commit('section/decrement')
-            
             this.playTimeline('top', this.$store.state.section.index)
         },
         

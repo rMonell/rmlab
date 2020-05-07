@@ -1,8 +1,23 @@
 <template>
-    <div class="burger">
-        <span class="slice"/>
+    <div :class="className" @click="handleClick">
+        <span />
     </div>
 </template>
+
+<script>
+    export default {
+        computed: {
+            className () {
+                return this.$store.state.menu.isOpen ? 'burger active' : 'burger'
+            }
+        },
+        methods: {
+            handleClick () {
+                this.$store.commit('menu/toggle')
+            }
+        }
+    }
+</script>
 
 <style>
     .burger {
@@ -13,7 +28,7 @@
         cursor: pointer;
     }
 
-    .burger:before {
+    .burger:after {
         content: '';
         position: absolute;
         top: 0;
@@ -27,7 +42,7 @@
         transform: scale3d(1, 0, 1);
     }
 
-    .burger:hover:before {
+    .burger:hover:after {
         transform-origin: top;
         transform: scale3d(1, 1, 1);
     }
@@ -67,5 +82,4 @@
 
     .burger > span:before { transform: translateY(-7px) }
     .burger > span:after { transform: translateY(7px) }
-
 </style>

@@ -1,7 +1,7 @@
 <template>
-  <main class="overflow-hidden w-100 h-100-vh">
-    <Menu />
+  <main class="overflow-hidden w-100 h-100-vh index-0 position-relative">
     <Header />
+    <Menu />
     <ScrollView>
       <div class="index-10">
         <nuxt />
