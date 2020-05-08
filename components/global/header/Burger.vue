@@ -6,6 +6,10 @@
         <div class="closes">
             <span  v-for="i in 2" :key="i" ref="close"></span>
         </div>
+
+        <svg ref="svg" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
+            <rect />
+        </svg>
     </div>
 </template>
 
@@ -26,11 +30,28 @@ import { TimelineLite, Expo } from 'gsap'
         },
 
         mounted() {
-            const { slice, close } = this.$refs
+            const { slice, close, svg } = this.$refs
             const easing = Expo.easeInOut
 
             this.timeline.staggerTo(slice, .4, {scaleX: 0, ease: easing}, .1)
             this.timeline.staggerTo(close, .5, {width: 16, ease: easing}, .1, '+=.25')
+
+            const mountTimeline = new TimelineLite()
+
+            mountTimeline.addLabel('start');
+
+            mountTimeline.to(svg, 1.5, { strokeDashoffset: 0, ease: easing }, 'start')
+
+            mountTimeline.fromTo(
+                slice,
+                .75,
+                { y: 0, width: 0, ease: easing },
+                { width: 16, ease: easing },
+                'start+=.75'
+            )
+
+            mountTimeline.to(slice[0], 1, { y: -7, ease: easing }, 'start+=.5')
+            mountTimeline.to(slice[2], 1, { y: 7, ease: easing }, 'start+=.5')
         },
 
         methods: {
@@ -50,8 +71,23 @@ import { TimelineLite, Expo } from 'gsap'
         position: relative;
         width: 50px;
         height: 50px;
-        border: 1px solid;
         cursor: pointer;
+    }
+
+    .burger svg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        stroke-dashoffset: 200;
+    }
+
+    rect {
+        width: 50px;
+        height: 50px;
+        stroke: currentColor;
+        stroke-width: 2px;
+        stroke-dasharray: 200;
     }
 
     .burger:after {
@@ -62,7 +98,6 @@ import { TimelineLite, Expo } from 'gsap'
         width: 100%;
         height: 100%;
         background-color: currentColor;
-        mix-blend-mode: difference;
         transform-origin: bottom;
         transition: transform .3s ease;
         transform: scale(1, 0);
@@ -78,6 +113,11 @@ import { TimelineLite, Expo } from 'gsap'
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+    }
+
+    .burger .slices, .burger .closes {
+        z-index: 200;
+        mix-blend-mode: difference;
     }
 
     .burger .slices > span { transform-origin: left }
