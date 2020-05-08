@@ -22,6 +22,10 @@ export default {
         return {
             items: [
                 {
+                    path: '/',
+                    value: 'Accueil'
+                },
+                {
                     path: '/about',
                     value: 'À propos'
                 },
@@ -63,7 +67,7 @@ export default {
 
     methods: {
         handleClick() {
-            this.timeline().reverse()
+            this.timeline.reverse()
             this.$store.commit('menu/toggle')
         }
     },
