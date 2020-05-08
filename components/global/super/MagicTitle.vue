@@ -1,6 +1,6 @@
 <template>
-    <div class="overflow-hidden">
-        <component ref="title" :is="tag" :class="'block ' + className">{{ value }}</component>
+    <div class="overflow-hidden" :class="className">
+        <component ref="title" :is="tag" class="block magic-title">{{ value }}</component>
     </div>
 </template>
 
@@ -88,3 +88,10 @@ export default {
     }
 }
 </script>
+
+<style>
+    .magic-title {
+        font-size: inherit;
+        font-weight: inherit;
+    }
+</style>

@@ -3,9 +3,7 @@
     <Header />
     <Menu />
     <ScrollView>
-      <div class="index-10">
-        <nuxt />
-      </div>
+      <nuxt />
     </ScrollView>
   </main>
 </template>

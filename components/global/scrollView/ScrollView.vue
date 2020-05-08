@@ -1,6 +1,6 @@
 <template>
     <section
-        class="w-100 h-100-vh flex-row justify-center items-center p-l index-n1 position-relative"
+        class="w-100 h-100-vh flex-row justify-center items-center p-l position-relative"
         @wheel="handleScroll"
     >
         <slot />
@@ -68,6 +68,6 @@ export default {
         width: 100%;
         height: 0%;
         background-color: currentColor;
-        mix-blend-mode: difference;
+        z-index: 500;
     }
 </style>

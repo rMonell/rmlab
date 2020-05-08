@@ -1,5 +1,5 @@
 <template>
-    <nav class="w-100 h-100-vh position-absolute-tl index-0 flex-row justify-center items-center" ref="container">
+    <nav class="w-100 flex-row justify-center items-center overflow-hidden" ref="container">
         <ul>
             <li v-for="item in items" :key="item.path" ref="item">
                 <nuxt-link
@@ -34,7 +34,8 @@ export default {
                     value: 'Me contacter'
                 }
             ],
-            isAnimating: false,
+
+            timeline: new TimelineLite({ paused: true }) 
         }
     },
 
@@ -44,43 +45,38 @@ export default {
         }
     },
 
+    mounted() {
+        const { container, item } = this.$refs
+        const easing = Expo.easeInOut
+
+        this.timeline.fromTo(container, 1, { height: '0vh',  ease: easing }, { height: '100vh',  ease: easing })
+
+        this.timeline.staggerFromTo(
+            item,
+            .75,
+            {y: -25, alpha: 0, ease: easing},
+            {y: 0, alpha: 1, ease: easing, onComplete: () => this.isAnimating = false},
+            .15,
+            '-=.25'
+        )
+    },
+
     methods: {
-        toggleMenu (action) {
-            const { container, item } = this.$refs
-            const timeline = new TimelineLite() 
-            const easing = Expo.easeInOut
-
-            this.isAnimating = true
-
-            timeline.fromTo(container, 1, { y: '-100%',  ease: easing }, { y: '0%',  ease: easing })
-
-            timeline.staggerFromTo(
-                item,
-                .75,
-                {y: -25, alpha: 0, ease: easing},
-                {y: 0, alpha: 1, ease: easing, onComplete: () => this.isAnimating = false},
-                .15,
-                '-=.25'
-            )
-            
-            action === 'open' ? timeline.play() : timeline.reverse(0)
-        },
-
         handleClick() {
-            this.toggleMenu('close')
+            this.timeline().reverse()
             this.$store.commit('menu/toggle')
         }
     },
 
     watch: {
-        isOpen: function(status) { status ? this.toggleMenu('open') : this.toggleMenu('close') }
+        isOpen: function(status) { status ? this.timeline.play() : this.timeline.reverse() }
     }
 }
 </script>
 
 <style>
     nav {
-        transform: translateY(-100%);
+        height: 0vh;
         background-color: currentColor;
         mix-blend-mode: difference;
     }

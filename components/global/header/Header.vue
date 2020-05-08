@@ -1,5 +1,5 @@
 <template>
-    <header class="position-absolute-tl flex-row justify-between items-center w-100 p-l index-600">
+    <header class="position-absolute-tl flex-row justify-between items-center w-100 p-l index-400">
         <Logo />
         <Burger />
     </header>
@@ -16,7 +16,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
   header {
     mix-blend-mode: difference;
   }
