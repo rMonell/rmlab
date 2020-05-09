@@ -1,11 +1,11 @@
 <template>
     <nav class="w-100 flex-row justify-center items-center overflow-hidden" ref="container">
-        <ul>
+        <ul class="mix-difference">
             <li v-for="item in items" :key="item.path" ref="item">
                 <nuxt-link
                     :to="item.path"
                     @click.native="handleClick"
-                    class="font-xl-700"
+                    class="font-hero-700 block w-100 position-relative ph-m"
                 >
                     {{ item.value }}
                 </nuxt-link>
@@ -78,15 +78,30 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
     nav {
         height: 0vh;
         background-color: currentColor;
-        mix-blend-mode: difference;
-    }
 
-    a {
-        text-decoration: none;
-        color: initial;
+        a {
+            &:hover:after {
+                transform: scale3d(1, 1, 1);
+                transform-origin: left;
+            }
+
+            &:after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                background-color: currentColor;
+                mix-blend-mode: difference;
+                transform-origin: right;
+                transform: scale3d(0, 1, 1);
+                transition: transform .6s cubic-bezier(0.5, 0.1, 0, 1);
+            }
+        }
     }
 </style>

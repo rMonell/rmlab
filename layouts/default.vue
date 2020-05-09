@@ -18,6 +18,14 @@
     background-color: #000;
     color: #fff;
   }
+  a {
+    text-decoration: none;
+    color: currentColor;
+  }
+
+  .mix-difference {
+    mix-blend-mode: difference;
+  }
 </style>
 
 <script>
@@ -34,7 +42,7 @@ export default {
 
   data() {
     return {
-      loading: false
+      loading: true
     }
   },
 

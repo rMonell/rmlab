@@ -1,6 +1,6 @@
 export const state = () => ({
     index: 0,
-    tree: ['/', '/about']
+    tree: ['/', '/about', '/projects', '/contact']
 })
 
 export const mutations = {

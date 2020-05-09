@@ -19,18 +19,11 @@
                 :delay=".15"
             />
         </div>
-        <div class="mt-m flex-column justify-end items-center cursor-pointer position-absolute-b pb-l">
-            <MagicFill
-                width="1px"
-                className="mb-t"
-
-                from="0px"
-                to="60px"
-                target="height"
-                :duration=".75"
-                :delay=".5"
+        <div class="mt-m flex-column justify-end items-center position-absolute-b pb-l fill-container">
+            <span
+                ref="fill"
+                class="fill"
             />
-            
             <MagicTitle
                 value="Scroll"
                 tag="span"
@@ -45,12 +38,39 @@
 </template>
 
 <script>
+import { TimelineLite, Expo } from 'gsap'
 import MagicTitle from '~/components/global/super/MagicTitle.vue'
-import MagicFill from '~/components/global/super/MagicFill.vue'
 
 export default {
     components: {
-        MagicTitle, MagicFill
+        MagicTitle
     },
+
+    mounted() {
+        const { fill } = this.$refs
+        const timeline = new TimelineLite() 
+        const easing = Expo.easeInOut
+
+        timeline.fromTo(
+            fill,
+            .75,
+            { height: 0, ease: easing },
+            { height: 60, ease: easing },
+        )
+    }
 }
 </script>
+
+<style>
+    .fill-container:hover .fill {
+        height: 40px !important;
+    }
+
+    .fill {
+        display: block;
+        background-color: currentColor;
+        width: 1px;
+        height: 0;
+        transition: height .3s ease;
+    }
+</style>

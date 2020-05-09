@@ -15,7 +15,9 @@
     "@nuxtjs/dotenv": "^1.4.0",
     "@nuxtjs/pwa": "^3.0.0-0",
     "gsap": "^3.2.6",
+    "node-sass": "^4.14.1",
     "nuxt": "^2.0.0",
+    "sass-loader": "^8.0.2",
     "three": "^0.116.1",
     "vue-fragment": "^1.5.1"
   },

@@ -1,5 +1,5 @@
 <template>
-    <div class="burger" @click="handleClick">
+    <button class="burger" @click="handleClick">
         <div class="slices">
             <span  v-for="i in 3" :key="i" ref="slice"></span>
         </div>
@@ -10,7 +10,7 @@
         <svg ref="svg" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
             <rect />
         </svg>
-    </div>
+    </button>
 </template>
 
 <script>
@@ -45,7 +45,7 @@ import { TimelineLite, Expo } from 'gsap'
             mountTimeline.fromTo(
                 slice,
                 .75,
-                { y: 0, width: 0, ease: easing },
+                { x: '-50%', y: 0, ease: easing },
                 { width: 16, ease: easing },
                 'start+=.75'
             )
@@ -66,81 +66,89 @@ import { TimelineLite, Expo } from 'gsap'
     }
 </script>
 
-<style>
+<style lang="scss">
+    $burger-size: 50px;
+
+    .burger, .burger rect {
+        width: $burger-size;
+        height: $burger-size;
+    }
+
+    .burger:after, .burger svg {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
     .burger {
         position: relative;
-        width: 50px;
-        height: 50px;
         cursor: pointer;
+        border: none;
+        background-color: transparent;
+        color: currentColor;
+
+        &:hover:after {
+            transform-origin: top;
+            transform: scale(1, 1);
+        }
+
+        &:active {
+            outline: none;
+            .slices, .closes { transform: scale(.6) }
+        }
+
+        &:after {
+            content: '';
+            width: 100%;
+            height: 100%;
+            background-color: currentColor;
+            transform-origin: bottom;
+            transition: transform .3s ease;
+            transform: scale(1, 0);
+        }
+
+        svg {
+            z-index: -1;
+            stroke-dashoffset: 200;
+
+            rect {
+                stroke: currentColor;
+                stroke-width: 4px;
+                stroke-dasharray: 200;
+            }
+        }
+
+        .slices, .closes, .slices > span, .closes > span {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+        }
+
+        .slices, .closes {
+            z-index: 200;
+            mix-blend-mode: difference;
+            transform: translate(-50%, -50%);
+            transition: transform .125s ease;
+        }
+
+        .slices > span { transform-origin: left }
+
+        span {
+            display: block;
+            background-color: currentColor;
+            transition: all .3s ease;
+        }
+
+        span, .closes {
+            width: 0;
+            height: 2px;
+        }
+
+        .closes > span {
+            width: 0;
+
+            &:first-child { transform: translate(-50%, -50%) rotate(45deg) }
+            &:last-child { transform: translate(-50%, -50%) rotate(-45deg) }
+        }
     }
-
-    .burger svg {
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: -1;
-        stroke-dashoffset: 200;
-    }
-
-    rect {
-        width: 50px;
-        height: 50px;
-        stroke: currentColor;
-        stroke-width: 2px;
-        stroke-dasharray: 200;
-    }
-
-    .burger:after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: currentColor;
-        transform-origin: bottom;
-        transition: transform .3s ease;
-        transform: scale(1, 0);
-    }
-
-    .burger:hover:after {
-        transform-origin: top;
-        transform: scale(1, 1);
-    }
-
-    .burger .slices, .burger .closes, .burger .slices > span, .burger .closes > span {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
-
-    .burger .slices, .burger .closes {
-        z-index: 200;
-        mix-blend-mode: difference;
-    }
-
-    .burger .slices > span { transform-origin: left }
-
-    .burger .slices > span:first-child { transform: translate(-50%, -5px) }
-    .burger .slices > span:last-child { transform: translate(-50%, 5px) }
-
-    .burger span, .burger .closes {
-        width: 16px;
-        height: 1px;
-    }
-
-    .burger span {
-        display: block;
-        background-color: currentColor;
-        transition: all .3s ease;
-    }
-
-    .burger .closes > span {
-        width: 0;
-    }
-
-    .burger .closes > span:first-child {  transform: translate(-50%, -50%) rotate(45deg) }
-    .burger .closes > span:last-child { transform: translate(-50%, -50%) rotate(-45deg) }
-    
 </style>
