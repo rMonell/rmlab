@@ -9138,68 +9138,8 @@ select {
 /********************
 * Fonts
 */
-.font-hero, .font-hero-normal, .font-hero-italic, .font-hero-oblique, .font-hero-100, .font-hero-200, .font-hero-300, .font-hero-400, .font-hero-500, .font-hero-600, .font-hero-700, .font-hero-800, .font-hero-900 {
+.font-hero {
   font-size: 60px; }
-  .font-hero-normal {
-    font-style: normal; }
-    .font-hero-normal-100 {
-      font-weight: 100; }
-    .font-hero-normal-200 {
-      font-weight: 200; }
-    .font-hero-normal-300 {
-      font-weight: 300; }
-    .font-hero-normal-400 {
-      font-weight: 400; }
-    .font-hero-normal-500 {
-      font-weight: 500; }
-    .font-hero-normal-600 {
-      font-weight: 600; }
-    .font-hero-normal-700 {
-      font-weight: 700; }
-    .font-hero-normal-800 {
-      font-weight: 800; }
-    .font-hero-normal-900 {
-      font-weight: 900; }
-  .font-hero-italic {
-    font-style: italic; }
-    .font-hero-italic-100 {
-      font-weight: 100; }
-    .font-hero-italic-200 {
-      font-weight: 200; }
-    .font-hero-italic-300 {
-      font-weight: 300; }
-    .font-hero-italic-400 {
-      font-weight: 400; }
-    .font-hero-italic-500 {
-      font-weight: 500; }
-    .font-hero-italic-600 {
-      font-weight: 600; }
-    .font-hero-italic-700 {
-      font-weight: 700; }
-    .font-hero-italic-800 {
-      font-weight: 800; }
-    .font-hero-italic-900 {
-      font-weight: 900; }
-  .font-hero-oblique {
-    font-style: oblique; }
-    .font-hero-oblique-100 {
-      font-weight: 100; }
-    .font-hero-oblique-200 {
-      font-weight: 200; }
-    .font-hero-oblique-300 {
-      font-weight: 300; }
-    .font-hero-oblique-400 {
-      font-weight: 400; }
-    .font-hero-oblique-500 {
-      font-weight: 500; }
-    .font-hero-oblique-600 {
-      font-weight: 600; }
-    .font-hero-oblique-700 {
-      font-weight: 700; }
-    .font-hero-oblique-800 {
-      font-weight: 800; }
-    .font-hero-oblique-900 {
-      font-weight: 900; }
   .font-hero-100 {
     font-weight: 100; }
     .font-hero-100-normal {
@@ -9272,68 +9212,25 @@ select {
       font-style: italic; }
     .font-hero-900-oblique {
       font-style: oblique; }
-.font-xl, .font-xl-normal, .font-xl-italic, .font-xl-oblique, .font-xl-100, .font-xl-200, .font-xl-300, .font-xl-400, .font-xl-500, .font-xl-600, .font-xl-700, .font-xl-800, .font-xl-900 {
+
+@media (min-width: 1200px) {
+  .xl\:font-hero:not([class~="m:"]):not([class~="l:"]):not([class~="s:"]) {
+    font-size: 60px; } }
+
+@media (min-width: 992px) {
+  .l\:font-hero:not([class~="m:"]):not([class~="s:"]) {
+    font-size: 60px; } }
+
+@media (min-width: 768px) {
+  .m\:font-hero:not([class~="s:"]) {
+    font-size: 60px; } }
+
+@media (min-width: 576px) {
+  .s\:font-hero {
+    font-size: 60px; } }
+
+.font-xl {
   font-size: 40px; }
-  .font-xl-normal {
-    font-style: normal; }
-    .font-xl-normal-100 {
-      font-weight: 100; }
-    .font-xl-normal-200 {
-      font-weight: 200; }
-    .font-xl-normal-300 {
-      font-weight: 300; }
-    .font-xl-normal-400 {
-      font-weight: 400; }
-    .font-xl-normal-500 {
-      font-weight: 500; }
-    .font-xl-normal-600 {
-      font-weight: 600; }
-    .font-xl-normal-700 {
-      font-weight: 700; }
-    .font-xl-normal-800 {
-      font-weight: 800; }
-    .font-xl-normal-900 {
-      font-weight: 900; }
-  .font-xl-italic {
-    font-style: italic; }
-    .font-xl-italic-100 {
-      font-weight: 100; }
-    .font-xl-italic-200 {
-      font-weight: 200; }
-    .font-xl-italic-300 {
-      font-weight: 300; }
-    .font-xl-italic-400 {
-      font-weight: 400; }
-    .font-xl-italic-500 {
-      font-weight: 500; }
-    .font-xl-italic-600 {
-      font-weight: 600; }
-    .font-xl-italic-700 {
-      font-weight: 700; }
-    .font-xl-italic-800 {
-      font-weight: 800; }
-    .font-xl-italic-900 {
-      font-weight: 900; }
-  .font-xl-oblique {
-    font-style: oblique; }
-    .font-xl-oblique-100 {
-      font-weight: 100; }
-    .font-xl-oblique-200 {
-      font-weight: 200; }
-    .font-xl-oblique-300 {
-      font-weight: 300; }
-    .font-xl-oblique-400 {
-      font-weight: 400; }
-    .font-xl-oblique-500 {
-      font-weight: 500; }
-    .font-xl-oblique-600 {
-      font-weight: 600; }
-    .font-xl-oblique-700 {
-      font-weight: 700; }
-    .font-xl-oblique-800 {
-      font-weight: 800; }
-    .font-xl-oblique-900 {
-      font-weight: 900; }
   .font-xl-100 {
     font-weight: 100; }
     .font-xl-100-normal {
@@ -9406,68 +9303,25 @@ select {
       font-style: italic; }
     .font-xl-900-oblique {
       font-style: oblique; }
-.font-l, .font-l-normal, .font-l-italic, .font-l-oblique, .font-l-100, .font-l-200, .font-l-300, .font-l-400, .font-l-500, .font-l-600, .font-l-700, .font-l-800, .font-l-900 {
+
+@media (min-width: 1200px) {
+  .xl\:font-xl:not([class~="m:"]):not([class~="l:"]):not([class~="s:"]) {
+    font-size: 40px; } }
+
+@media (min-width: 992px) {
+  .l\:font-xl:not([class~="m:"]):not([class~="s:"]) {
+    font-size: 40px; } }
+
+@media (min-width: 768px) {
+  .m\:font-xl:not([class~="s:"]) {
+    font-size: 40px; } }
+
+@media (min-width: 576px) {
+  .s\:font-xl {
+    font-size: 40px; } }
+
+.font-l {
   font-size: 18px; }
-  .font-l-normal {
-    font-style: normal; }
-    .font-l-normal-100 {
-      font-weight: 100; }
-    .font-l-normal-200 {
-      font-weight: 200; }
-    .font-l-normal-300 {
-      font-weight: 300; }
-    .font-l-normal-400 {
-      font-weight: 400; }
-    .font-l-normal-500 {
-      font-weight: 500; }
-    .font-l-normal-600 {
-      font-weight: 600; }
-    .font-l-normal-700 {
-      font-weight: 700; }
-    .font-l-normal-800 {
-      font-weight: 800; }
-    .font-l-normal-900 {
-      font-weight: 900; }
-  .font-l-italic {
-    font-style: italic; }
-    .font-l-italic-100 {
-      font-weight: 100; }
-    .font-l-italic-200 {
-      font-weight: 200; }
-    .font-l-italic-300 {
-      font-weight: 300; }
-    .font-l-italic-400 {
-      font-weight: 400; }
-    .font-l-italic-500 {
-      font-weight: 500; }
-    .font-l-italic-600 {
-      font-weight: 600; }
-    .font-l-italic-700 {
-      font-weight: 700; }
-    .font-l-italic-800 {
-      font-weight: 800; }
-    .font-l-italic-900 {
-      font-weight: 900; }
-  .font-l-oblique {
-    font-style: oblique; }
-    .font-l-oblique-100 {
-      font-weight: 100; }
-    .font-l-oblique-200 {
-      font-weight: 200; }
-    .font-l-oblique-300 {
-      font-weight: 300; }
-    .font-l-oblique-400 {
-      font-weight: 400; }
-    .font-l-oblique-500 {
-      font-weight: 500; }
-    .font-l-oblique-600 {
-      font-weight: 600; }
-    .font-l-oblique-700 {
-      font-weight: 700; }
-    .font-l-oblique-800 {
-      font-weight: 800; }
-    .font-l-oblique-900 {
-      font-weight: 900; }
   .font-l-100 {
     font-weight: 100; }
     .font-l-100-normal {
@@ -9540,68 +9394,25 @@ select {
       font-style: italic; }
     .font-l-900-oblique {
       font-style: oblique; }
-.font-m, .font-m-normal, .font-m-italic, .font-m-oblique, .font-m-100, .font-m-200, .font-m-300, .font-m-400, .font-m-500, .font-m-600, .font-m-700, .font-m-800, .font-m-900 {
+
+@media (min-width: 1200px) {
+  .xl\:font-l:not([class~="m:"]):not([class~="l:"]):not([class~="s:"]) {
+    font-size: 18px; } }
+
+@media (min-width: 992px) {
+  .l\:font-l:not([class~="m:"]):not([class~="s:"]) {
+    font-size: 18px; } }
+
+@media (min-width: 768px) {
+  .m\:font-l:not([class~="s:"]) {
+    font-size: 18px; } }
+
+@media (min-width: 576px) {
+  .s\:font-l {
+    font-size: 18px; } }
+
+.font-m {
   font-size: 14px; }
-  .font-m-normal {
-    font-style: normal; }
-    .font-m-normal-100 {
-      font-weight: 100; }
-    .font-m-normal-200 {
-      font-weight: 200; }
-    .font-m-normal-300 {
-      font-weight: 300; }
-    .font-m-normal-400 {
-      font-weight: 400; }
-    .font-m-normal-500 {
-      font-weight: 500; }
-    .font-m-normal-600 {
-      font-weight: 600; }
-    .font-m-normal-700 {
-      font-weight: 700; }
-    .font-m-normal-800 {
-      font-weight: 800; }
-    .font-m-normal-900 {
-      font-weight: 900; }
-  .font-m-italic {
-    font-style: italic; }
-    .font-m-italic-100 {
-      font-weight: 100; }
-    .font-m-italic-200 {
-      font-weight: 200; }
-    .font-m-italic-300 {
-      font-weight: 300; }
-    .font-m-italic-400 {
-      font-weight: 400; }
-    .font-m-italic-500 {
-      font-weight: 500; }
-    .font-m-italic-600 {
-      font-weight: 600; }
-    .font-m-italic-700 {
-      font-weight: 700; }
-    .font-m-italic-800 {
-      font-weight: 800; }
-    .font-m-italic-900 {
-      font-weight: 900; }
-  .font-m-oblique {
-    font-style: oblique; }
-    .font-m-oblique-100 {
-      font-weight: 100; }
-    .font-m-oblique-200 {
-      font-weight: 200; }
-    .font-m-oblique-300 {
-      font-weight: 300; }
-    .font-m-oblique-400 {
-      font-weight: 400; }
-    .font-m-oblique-500 {
-      font-weight: 500; }
-    .font-m-oblique-600 {
-      font-weight: 600; }
-    .font-m-oblique-700 {
-      font-weight: 700; }
-    .font-m-oblique-800 {
-      font-weight: 800; }
-    .font-m-oblique-900 {
-      font-weight: 900; }
   .font-m-100 {
     font-weight: 100; }
     .font-m-100-normal {
@@ -9674,68 +9485,25 @@ select {
       font-style: italic; }
     .font-m-900-oblique {
       font-style: oblique; }
-.font-s, .font-s-normal, .font-s-italic, .font-s-oblique, .font-s-100, .font-s-200, .font-s-300, .font-s-400, .font-s-500, .font-s-600, .font-s-700, .font-s-800, .font-s-900 {
+
+@media (min-width: 1200px) {
+  .xl\:font-m:not([class~="m:"]):not([class~="l:"]):not([class~="s:"]) {
+    font-size: 14px; } }
+
+@media (min-width: 992px) {
+  .l\:font-m:not([class~="m:"]):not([class~="s:"]) {
+    font-size: 14px; } }
+
+@media (min-width: 768px) {
+  .m\:font-m:not([class~="s:"]) {
+    font-size: 14px; } }
+
+@media (min-width: 576px) {
+  .s\:font-m {
+    font-size: 14px; } }
+
+.font-s {
   font-size: 12px; }
-  .font-s-normal {
-    font-style: normal; }
-    .font-s-normal-100 {
-      font-weight: 100; }
-    .font-s-normal-200 {
-      font-weight: 200; }
-    .font-s-normal-300 {
-      font-weight: 300; }
-    .font-s-normal-400 {
-      font-weight: 400; }
-    .font-s-normal-500 {
-      font-weight: 500; }
-    .font-s-normal-600 {
-      font-weight: 600; }
-    .font-s-normal-700 {
-      font-weight: 700; }
-    .font-s-normal-800 {
-      font-weight: 800; }
-    .font-s-normal-900 {
-      font-weight: 900; }
-  .font-s-italic {
-    font-style: italic; }
-    .font-s-italic-100 {
-      font-weight: 100; }
-    .font-s-italic-200 {
-      font-weight: 200; }
-    .font-s-italic-300 {
-      font-weight: 300; }
-    .font-s-italic-400 {
-      font-weight: 400; }
-    .font-s-italic-500 {
-      font-weight: 500; }
-    .font-s-italic-600 {
-      font-weight: 600; }
-    .font-s-italic-700 {
-      font-weight: 700; }
-    .font-s-italic-800 {
-      font-weight: 800; }
-    .font-s-italic-900 {
-      font-weight: 900; }
-  .font-s-oblique {
-    font-style: oblique; }
-    .font-s-oblique-100 {
-      font-weight: 100; }
-    .font-s-oblique-200 {
-      font-weight: 200; }
-    .font-s-oblique-300 {
-      font-weight: 300; }
-    .font-s-oblique-400 {
-      font-weight: 400; }
-    .font-s-oblique-500 {
-      font-weight: 500; }
-    .font-s-oblique-600 {
-      font-weight: 600; }
-    .font-s-oblique-700 {
-      font-weight: 700; }
-    .font-s-oblique-800 {
-      font-weight: 800; }
-    .font-s-oblique-900 {
-      font-weight: 900; }
   .font-s-100 {
     font-weight: 100; }
     .font-s-100-normal {
@@ -9808,68 +9576,25 @@ select {
       font-style: italic; }
     .font-s-900-oblique {
       font-style: oblique; }
-.font-t, .font-t-normal, .font-t-italic, .font-t-oblique, .font-t-100, .font-t-200, .font-t-300, .font-t-400, .font-t-500, .font-t-600, .font-t-700, .font-t-800, .font-t-900 {
+
+@media (min-width: 1200px) {
+  .xl\:font-s:not([class~="m:"]):not([class~="l:"]):not([class~="s:"]) {
+    font-size: 12px; } }
+
+@media (min-width: 992px) {
+  .l\:font-s:not([class~="m:"]):not([class~="s:"]) {
+    font-size: 12px; } }
+
+@media (min-width: 768px) {
+  .m\:font-s:not([class~="s:"]) {
+    font-size: 12px; } }
+
+@media (min-width: 576px) {
+  .s\:font-s {
+    font-size: 12px; } }
+
+.font-t {
   font-size: 10px; }
-  .font-t-normal {
-    font-style: normal; }
-    .font-t-normal-100 {
-      font-weight: 100; }
-    .font-t-normal-200 {
-      font-weight: 200; }
-    .font-t-normal-300 {
-      font-weight: 300; }
-    .font-t-normal-400 {
-      font-weight: 400; }
-    .font-t-normal-500 {
-      font-weight: 500; }
-    .font-t-normal-600 {
-      font-weight: 600; }
-    .font-t-normal-700 {
-      font-weight: 700; }
-    .font-t-normal-800 {
-      font-weight: 800; }
-    .font-t-normal-900 {
-      font-weight: 900; }
-  .font-t-italic {
-    font-style: italic; }
-    .font-t-italic-100 {
-      font-weight: 100; }
-    .font-t-italic-200 {
-      font-weight: 200; }
-    .font-t-italic-300 {
-      font-weight: 300; }
-    .font-t-italic-400 {
-      font-weight: 400; }
-    .font-t-italic-500 {
-      font-weight: 500; }
-    .font-t-italic-600 {
-      font-weight: 600; }
-    .font-t-italic-700 {
-      font-weight: 700; }
-    .font-t-italic-800 {
-      font-weight: 800; }
-    .font-t-italic-900 {
-      font-weight: 900; }
-  .font-t-oblique {
-    font-style: oblique; }
-    .font-t-oblique-100 {
-      font-weight: 100; }
-    .font-t-oblique-200 {
-      font-weight: 200; }
-    .font-t-oblique-300 {
-      font-weight: 300; }
-    .font-t-oblique-400 {
-      font-weight: 400; }
-    .font-t-oblique-500 {
-      font-weight: 500; }
-    .font-t-oblique-600 {
-      font-weight: 600; }
-    .font-t-oblique-700 {
-      font-weight: 700; }
-    .font-t-oblique-800 {
-      font-weight: 800; }
-    .font-t-oblique-900 {
-      font-weight: 900; }
   .font-t-100 {
     font-weight: 100; }
     .font-t-100-normal {
@@ -9942,30 +9667,193 @@ select {
       font-style: italic; }
     .font-t-900-oblique {
       font-style: oblique; }
-.font-normal, .font-hero-normal-100, .font-hero-normal-200, .font-hero-normal-300, .font-hero-normal-400, .font-hero-normal-500, .font-hero-normal-600, .font-hero-normal-700, .font-hero-normal-800, .font-hero-normal-900, .font-xl-normal-100, .font-xl-normal-200, .font-xl-normal-300, .font-xl-normal-400, .font-xl-normal-500, .font-xl-normal-600, .font-xl-normal-700, .font-xl-normal-800, .font-xl-normal-900, .font-l-normal-100, .font-l-normal-200, .font-l-normal-300, .font-l-normal-400, .font-l-normal-500, .font-l-normal-600, .font-l-normal-700, .font-l-normal-800, .font-l-normal-900, .font-m-normal-100, .font-m-normal-200, .font-m-normal-300, .font-m-normal-400, .font-m-normal-500, .font-m-normal-600, .font-m-normal-700, .font-m-normal-800, .font-m-normal-900, .font-s-normal-100, .font-s-normal-200, .font-s-normal-300, .font-s-normal-400, .font-s-normal-500, .font-s-normal-600, .font-s-normal-700, .font-s-normal-800, .font-s-normal-900, .font-t-normal-100, .font-t-normal-200, .font-t-normal-300, .font-t-normal-400, .font-t-normal-500, .font-t-normal-600, .font-t-normal-700, .font-t-normal-800, .font-t-normal-900 {
-  font-style: normal; }
-.font-italic, .font-hero-italic-100, .font-hero-italic-200, .font-hero-italic-300, .font-hero-italic-400, .font-hero-italic-500, .font-hero-italic-600, .font-hero-italic-700, .font-hero-italic-800, .font-hero-italic-900, .font-xl-italic-100, .font-xl-italic-200, .font-xl-italic-300, .font-xl-italic-400, .font-xl-italic-500, .font-xl-italic-600, .font-xl-italic-700, .font-xl-italic-800, .font-xl-italic-900, .font-l-italic-100, .font-l-italic-200, .font-l-italic-300, .font-l-italic-400, .font-l-italic-500, .font-l-italic-600, .font-l-italic-700, .font-l-italic-800, .font-l-italic-900, .font-m-italic-100, .font-m-italic-200, .font-m-italic-300, .font-m-italic-400, .font-m-italic-500, .font-m-italic-600, .font-m-italic-700, .font-m-italic-800, .font-m-italic-900, .font-s-italic-100, .font-s-italic-200, .font-s-italic-300, .font-s-italic-400, .font-s-italic-500, .font-s-italic-600, .font-s-italic-700, .font-s-italic-800, .font-s-italic-900, .font-t-italic-100, .font-t-italic-200, .font-t-italic-300, .font-t-italic-400, .font-t-italic-500, .font-t-italic-600, .font-t-italic-700, .font-t-italic-800, .font-t-italic-900 {
-  font-style: italic; }
-.font-oblique, .font-hero-oblique-100, .font-hero-oblique-200, .font-hero-oblique-300, .font-hero-oblique-400, .font-hero-oblique-500, .font-hero-oblique-600, .font-hero-oblique-700, .font-hero-oblique-800, .font-hero-oblique-900, .font-xl-oblique-100, .font-xl-oblique-200, .font-xl-oblique-300, .font-xl-oblique-400, .font-xl-oblique-500, .font-xl-oblique-600, .font-xl-oblique-700, .font-xl-oblique-800, .font-xl-oblique-900, .font-l-oblique-100, .font-l-oblique-200, .font-l-oblique-300, .font-l-oblique-400, .font-l-oblique-500, .font-l-oblique-600, .font-l-oblique-700, .font-l-oblique-800, .font-l-oblique-900, .font-m-oblique-100, .font-m-oblique-200, .font-m-oblique-300, .font-m-oblique-400, .font-m-oblique-500, .font-m-oblique-600, .font-m-oblique-700, .font-m-oblique-800, .font-m-oblique-900, .font-s-oblique-100, .font-s-oblique-200, .font-s-oblique-300, .font-s-oblique-400, .font-s-oblique-500, .font-s-oblique-600, .font-s-oblique-700, .font-s-oblique-800, .font-s-oblique-900, .font-t-oblique-100, .font-t-oblique-200, .font-t-oblique-300, .font-t-oblique-400, .font-t-oblique-500, .font-t-oblique-600, .font-t-oblique-700, .font-t-oblique-800, .font-t-oblique-900 {
-  font-style: oblique; }
-.font-100 {
+
+@media (min-width: 1200px) {
+  .xl\:font-t:not([class~="m:"]):not([class~="l:"]):not([class~="s:"]) {
+    font-size: 10px; } }
+
+@media (min-width: 992px) {
+  .l\:font-t:not([class~="m:"]):not([class~="s:"]) {
+    font-size: 10px; } }
+
+@media (min-width: 768px) {
+  .m\:font-t:not([class~="s:"]) {
+    font-size: 10px; } }
+
+@media (min-width: 576px) {
+  .s\:font-t {
+    font-size: 10px; } }
+
+.weight-100 {
   font-weight: 100; }
-.font-200 {
+
+@media (min-width: 1200px) {
+  .xl\:weight-100:not([class~="m:"]):not([class~="l:"]):not([class~="s:"]) {
+    font-weight: 100; } }
+
+@media (min-width: 992px) {
+  .l\:weight-100:not([class~="m:"]):not([class~="s:"]) {
+    font-weight: 100; } }
+
+@media (min-width: 768px) {
+  .m\:weight-100:not([class~="s:"]) {
+    font-weight: 100; } }
+
+@media (min-width: 576px) {
+  .s\:weight-100 {
+    font-weight: 100; } }
+
+.weight-200 {
   font-weight: 200; }
-.font-300 {
+
+@media (min-width: 1200px) {
+  .xl\:weight-200:not([class~="m:"]):not([class~="l:"]):not([class~="s:"]) {
+    font-weight: 200; } }
+
+@media (min-width: 992px) {
+  .l\:weight-200:not([class~="m:"]):not([class~="s:"]) {
+    font-weight: 200; } }
+
+@media (min-width: 768px) {
+  .m\:weight-200:not([class~="s:"]) {
+    font-weight: 200; } }
+
+@media (min-width: 576px) {
+  .s\:weight-200 {
+    font-weight: 200; } }
+
+.weight-300 {
   font-weight: 300; }
-.font-400 {
+
+@media (min-width: 1200px) {
+  .xl\:weight-300:not([class~="m:"]):not([class~="l:"]):not([class~="s:"]) {
+    font-weight: 300; } }
+
+@media (min-width: 992px) {
+  .l\:weight-300:not([class~="m:"]):not([class~="s:"]) {
+    font-weight: 300; } }
+
+@media (min-width: 768px) {
+  .m\:weight-300:not([class~="s:"]) {
+    font-weight: 300; } }
+
+@media (min-width: 576px) {
+  .s\:weight-300 {
+    font-weight: 300; } }
+
+.weight-400 {
   font-weight: 400; }
-.font-500 {
+
+@media (min-width: 1200px) {
+  .xl\:weight-400:not([class~="m:"]):not([class~="l:"]):not([class~="s:"]) {
+    font-weight: 400; } }
+
+@media (min-width: 992px) {
+  .l\:weight-400:not([class~="m:"]):not([class~="s:"]) {
+    font-weight: 400; } }
+
+@media (min-width: 768px) {
+  .m\:weight-400:not([class~="s:"]) {
+    font-weight: 400; } }
+
+@media (min-width: 576px) {
+  .s\:weight-400 {
+    font-weight: 400; } }
+
+.weight-500 {
   font-weight: 500; }
-.font-600 {
+
+@media (min-width: 1200px) {
+  .xl\:weight-500:not([class~="m:"]):not([class~="l:"]):not([class~="s:"]) {
+    font-weight: 500; } }
+
+@media (min-width: 992px) {
+  .l\:weight-500:not([class~="m:"]):not([class~="s:"]) {
+    font-weight: 500; } }
+
+@media (min-width: 768px) {
+  .m\:weight-500:not([class~="s:"]) {
+    font-weight: 500; } }
+
+@media (min-width: 576px) {
+  .s\:weight-500 {
+    font-weight: 500; } }
+
+.weight-600 {
   font-weight: 600; }
-.font-700 {
+
+@media (min-width: 1200px) {
+  .xl\:weight-600:not([class~="m:"]):not([class~="l:"]):not([class~="s:"]) {
+    font-weight: 600; } }
+
+@media (min-width: 992px) {
+  .l\:weight-600:not([class~="m:"]):not([class~="s:"]) {
+    font-weight: 600; } }
+
+@media (min-width: 768px) {
+  .m\:weight-600:not([class~="s:"]) {
+    font-weight: 600; } }
+
+@media (min-width: 576px) {
+  .s\:weight-600 {
+    font-weight: 600; } }
+
+.weight-700 {
   font-weight: 700; }
-.font-800 {
+
+@media (min-width: 1200px) {
+  .xl\:weight-700:not([class~="m:"]):not([class~="l:"]):not([class~="s:"]) {
+    font-weight: 700; } }
+
+@media (min-width: 992px) {
+  .l\:weight-700:not([class~="m:"]):not([class~="s:"]) {
+    font-weight: 700; } }
+
+@media (min-width: 768px) {
+  .m\:weight-700:not([class~="s:"]) {
+    font-weight: 700; } }
+
+@media (min-width: 576px) {
+  .s\:weight-700 {
+    font-weight: 700; } }
+
+.weight-800 {
   font-weight: 800; }
-.font-900 {
+
+@media (min-width: 1200px) {
+  .xl\:weight-800:not([class~="m:"]):not([class~="l:"]):not([class~="s:"]) {
+    font-weight: 800; } }
+
+@media (min-width: 992px) {
+  .l\:weight-800:not([class~="m:"]):not([class~="s:"]) {
+    font-weight: 800; } }
+
+@media (min-width: 768px) {
+  .m\:weight-800:not([class~="s:"]) {
+    font-weight: 800; } }
+
+@media (min-width: 576px) {
+  .s\:weight-800 {
+    font-weight: 800; } }
+
+.weight-900 {
   font-weight: 900; }
+
+@media (min-width: 1200px) {
+  .xl\:weight-900:not([class~="m:"]):not([class~="l:"]):not([class~="s:"]) {
+    font-weight: 900; } }
+
+@media (min-width: 992px) {
+  .l\:weight-900:not([class~="m:"]):not([class~="s:"]) {
+    font-weight: 900; } }
+
+@media (min-width: 768px) {
+  .m\:weight-900:not([class~="s:"]) {
+    font-weight: 900; } }
+
+@media (min-width: 576px) {
+  .s\:weight-900 {
+    font-weight: 900; } }
 
 /********************
 * Text

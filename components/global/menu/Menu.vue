@@ -5,7 +5,7 @@
                 <nuxt-link
                     :to="item.path"
                     @click.native="handleClick"
-                    class="font-hero-700 block w-100 position-relative ph-m"
+                    class="font-xl weight-700 block w-100 position-relative ph-m"
                 >
                     {{ item.value }}
                 </nuxt-link>

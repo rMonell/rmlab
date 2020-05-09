@@ -31,7 +31,6 @@ Vue.prototype.$Navigator = function (store, router) {
 
     this.playTimeline = (direction, route) => {
         this.timeline(direction, route)
-
         this.isPlayingTimeline = true
     } 
 

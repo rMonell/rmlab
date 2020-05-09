@@ -2,34 +2,6 @@
 * Titres / Textes / Liens
 */
 
-.title, .title { line-height: 1.25em }
-
-.title {
-	font-size: $title-size__redular;
-
-	&-l { font-size: $title-size__big }
-	&-m { font-size: $title-size__redular }
-	&-s { font-size: $title-size__small }
-	&-t { font-size: $title-size__tiny }
-}
-
-
-.text {
-	font-size: $text-size__regular;
-	
-	&-s { font-size: $text-size__small }
-}
-
-.link {
-	font-size: $text-size__regular;
-	font-weight: 500;
-	color: $color-primary;
-	text-decoration: none;
-	cursor: pointer;
-
-	&:hover { text-decoration: underline }
-}
-
 .skr-hint {
 	position: relative;
 
@@ -81,15 +53,8 @@
 	&-right { text-align: right }
 }
 
-.font {
-	&-900 { font-weight: 900 }
-	&-800 { font-weight: 800 }
-	&-700 { font-weight: 700 }
-	&-600 { font-weight: 600 }
-	&-500 { font-weight: 500 }
-	&-400 { font-weight: 400 }
-	&-300 { font-weight: 300 }
-	&-100 { font-weight: 100 }
-}
+@include medias('align-left') { text-align: left }
+@include medias('align-center') { text-align: center }
+@include medias('align-right') { text-align: right }
 
 .uppercase { text-transform: uppercase }

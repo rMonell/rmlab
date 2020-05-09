@@ -4,7 +4,7 @@
             <MagicTitle
                 value="Renaud Monell"
                 tag="h1"
-                className="font-hero-700 uppercase"
+                className="weight-700 font-xl m:font-hero uppercase"
 
                 from="bottom"
                 to="initialY"
@@ -12,7 +12,7 @@
             <MagicTitle
                 value="Développeur front-end"
                 tag="h2"
-                className="font-l-400"
+                className="font-l weight-400"
 
                 from="bottom"
                 to="initialY"

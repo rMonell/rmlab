@@ -1,5 +1,5 @@
 <template>
-    <header class="position-absolute-tl flex-row justify-between items-center w-100 p-l index-400 mix-difference">
+    <header class="position-absolute-tl flex-row justify-between items-center w-100 p-m m:p-l index-400 mix-difference">
         <Logo />
         <Burger />
     </header>

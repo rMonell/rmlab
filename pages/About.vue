@@ -1,9 +1,9 @@
 <template>
-    <div class="mw-50 mh-auto">
+    <div class="mw-100 align-center m:mw-50 m:align-left mh-auto">
         <MagicTitle
             value="À propos"
             tag="h1"
-            className="font-xl-700 uppercase mb-l"
+            className="font-xl weight-700 uppercase mb-l"
 
             from="bottom"
             to="initialY"

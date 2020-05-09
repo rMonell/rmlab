@@ -1,6 +1,6 @@
 <template>
     <section
-        class="w-100 h-100-vh flex-row justify-center items-center p-l position-relative"
+        class="w-100 h-100-vh flex-row justify-center items-center p-m m:p-l position-relative"
         @wheel="handleScroll"
     >
         <slot />

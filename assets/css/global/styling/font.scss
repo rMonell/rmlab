@@ -18,37 +18,23 @@
     }
   }
 }
-
-.font {
   @each $prefix, $size in $fontSizes {
-		&-#{$prefix} {
+  .font {
+    &-#{$prefix} {
       font-size: $size;
-
-      &-normal, &-italic, &-oblique,
-      &-100, &-200, &-300, &-400, &-500, &-600, &-700, &-800, &-900 { @extend .font-#{$prefix} }
-      
-      &-normal {
-        font-style: normal;
-        @include getFontWeights(".font-normal");
-      }
-
-      &-italic {
-        font-style: italic;
-        @include getFontWeights(".font-italic");
-      }
-
-      &-oblique {
-        font-style: oblique;
-        @include getFontWeights(".font-oblique");
-      }
-
       @include getFontWeights(false, true);
-		}
+    }
   }
-  
-  &-normal { font-style: normal }
-  &-italic { font-style: italic }
-  &-oblique { font-style: oblique }
 
-  @include getFontWeights();
+  @include medias('font-#{$prefix}') { font-size: $size }
 }
+
+@for $i from 1 through 9 {
+  $value: $i * 100;
+
+  .weight-#{$value} { font-weight: $value }
+
+  @include medias('weight-#{$value}') { font-weight: $value }
+}
+
+

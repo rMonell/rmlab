@@ -4,7 +4,7 @@
             <MagicTitle
                 value="Mes projets"
                 tag="h1"
-                className="font-hero-700 uppercase"
+                className="font-xl weight-700 uppercase"
 
                 from="bottom"
                 to="initialY"

@@ -1,10 +1,10 @@
 <template>
     <div class="flex-column items-center index-10">
-        <div class="align-left">
+        <div>
             <MagicTitle
                 value="Me contacter"
                 tag="h1"
-                className="font-xl-700 uppercase mb-l"
+                className="font-xl weight-700 uppercase mb-l align-center m:align-left"
 
                 from="bottom"
                 to="initialY"
