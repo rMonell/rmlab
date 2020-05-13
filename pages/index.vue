@@ -1,49 +1,55 @@
 <template>
-    <div class="flex-column items-center index-10">
-        <div class="align-center">
-            <MagicTitle
-                value="Renaud Monell"
-                tag="h1"
-                className="weight-700 font-xl m:font-hero uppercase"
+    <Fragment>
+        <div class="flex-column items-center index-10">
+            <div class="align-center">
+                <MagicTitle
+                    value="Renaud Monell"
+                    tag="h1"
+                    className="weight-700 font-xl m:font-hero uppercase"
 
-                from="bottom"
-                to="initialY"
-            />
-            <MagicTitle
-                value="Développeur front-end"
-                tag="h2"
-                className="font-l weight-400"
+                    from="bottom"
+                    to="initialY"
+                />
+                <MagicTitle
+                    value="Développeur front-end"
+                    tag="h2"
+                    className="font-l weight-400"
 
-                from="bottom"
-                to="initialY"
-                :delay=".15"
-            />
+                    from="bottom"
+                    to="initialY"
+                    :delay=".15"
+                />
+            </div>
+            <div class="mt-m flex-column justify-end items-center position-absolute-b pb-l fill-container">
+                <span
+                    ref="fill"
+                    class="fill"
+                />
+                <MagicTitle
+                    value="Scroll"
+                    tag="span"
+                    className="font-m"
+
+                    from="bottom"
+                    to="initialY"
+                    :delay=".15"
+                />
+            </div>
         </div>
-        <div class="mt-m flex-column justify-end items-center position-absolute-b pb-l fill-container">
-            <span
-                ref="fill"
-                class="fill"
-            />
-            <MagicTitle
-                value="Scroll"
-                tag="span"
-                className="font-m"
-
-                from="bottom"
-                to="initialY"
-                :delay=".15"
-            />
-        </div>
-    </div>
+        <HeroScene />
+    </Fragment>
 </template>
 
 <script>
-import { TimelineLite, Expo } from 'gsap'
 import MagicTitle from '~/components/global/super/MagicTitle.vue'
+import HeroScene from '~/components/scenes/HeroScene.vue'
+
+import { TimelineLite, Expo } from 'gsap'
+import { Fragment } from 'vue-fragment'
 
 export default {
     components: {
-        MagicTitle
+        MagicTitle, Fragment, HeroScene
     },
 
     mounted() {

@@ -2,6 +2,8 @@
     <section
         class="w-100 h-100-vh flex-row justify-center items-center p-m m:p-l position-relative"
         @wheel="handleScroll"
+        v-touch:swipe.top="() => navigator.prev(this.$store)"
+        v-touch:swipe.bottom="() => navigator.next(this.$store)"
     >
         <slot />
 
@@ -10,6 +12,9 @@
 </template>
 
 <script>
+import Vue from 'vue'
+import Vue2TouchEvents from 'vue2-touch-events'
+Vue.use(Vue2TouchEvents)
 
 export default {
     data () {

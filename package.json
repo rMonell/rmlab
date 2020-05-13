@@ -19,7 +19,8 @@
     "nuxt": "^2.0.0",
     "sass-loader": "^8.0.2",
     "three": "^0.116.1",
-    "vue-fragment": "^1.5.1"
+    "vue-fragment": "^1.5.1",
+    "vue2-touch-events": "^2.2.1"
   },
   "devDependencies": {}
 }
