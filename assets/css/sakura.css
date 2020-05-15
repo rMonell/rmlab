@@ -128,8 +128,12 @@ select {
   flex-direction: row; }
 .flex-column {
   flex-direction: column; }
-.flex.wrap, .wrap.flex-row, .wrap.flex-column {
+
+.wrap {
   flex-wrap: wrap; }
+
+.no-wrap {
+  flex-wrap: nowrap; }
 
 @media (min-width: 1200px) {
   .xl\:flex-row:not([class~="m:"]):not([class~="l:"]):not([class~="s:"]) {
@@ -2251,8 +2255,7 @@ select {
   z-index: -1; }
 
 .grid, .grid-xl, .grid-l, .grid-m, .grid-s, .grid-t {
-  display: flex;
-  flex-wrap: wrap; }
+  display: flex; }
   .grid-xl {
     margin: -40px; }
     .grid-xl > *[class*="col-"] {

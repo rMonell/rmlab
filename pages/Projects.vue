@@ -1,10 +1,10 @@
 <template>
-    <div class="flex-column items-center index-10">
-        <div class="align-left">
+    <div class="flex-column items-center index-10 w-100">
+        <div class="align-center w-100">
             <MagicTitle
                 value="Mes projets"
                 tag="h1"
-                className="font-xl weight-700 uppercase"
+                className="font-xl weight-700 uppercase mb-l"
 
                 from="bottom"
                 to="initialY"

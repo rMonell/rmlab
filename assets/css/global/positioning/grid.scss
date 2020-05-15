@@ -1,6 +1,5 @@
 .grid {
     display: flex;
-    flex-wrap: wrap;
 
     @each $prefix, $value in $sizes {
         &-#{$prefix} { @extend .grid }
