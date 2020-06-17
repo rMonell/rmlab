@@ -1,6 +1,6 @@
 <template>
-  <div class="logo overflow-hidden flex-row justify-center items-center">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 39.68 43.72" class="w-100 cursor-pointer" @click="handleClick">
+  <div class="logo overflow-hidden flex flex-row justify-center items-center">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 39.68 43.72" class="w-full cursor-pointer" @click="handleClick">
       <g>
           <g>
               <polygon points="0 23.5 7.09 30.59 7.09 43.72 0 36.63 0 23.5"/>

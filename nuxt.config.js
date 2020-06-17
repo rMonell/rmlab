@@ -27,6 +27,13 @@ export default {
     '@/assets/css/tailwind.scss'
   ],
   /*
+  ** Environement variables
+  */
+  env: {
+    CTF_SPACE_ID: 'y02g29aioh2y',
+    CTF_CDA_ACCESS_TOKEN: '7YKQKqHsIlseetCVE-wmWbZxh7megRf1n8llzwWFTiY'
+  },
+  /*
   ** Plugins to load before mounting the App
   */
   plugins: [
