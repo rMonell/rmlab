@@ -1,13 +1,13 @@
 <template>
   <Fragment>
-    <main class="overflow-hidden w-100 h-100-vh index-0 position-relative" v-if="loading">
+    <main class="overflow-hidden w-full h-screen z-0 relative" v-if="loading">
       <Header />
       <Menu />
       <ScrollView>
         <nuxt />
       </ScrollView>
     </main>
-    <main class="overflow-hidden w-100 h-100-vh index-0 position-relative" v-else>
+    <main class="overflow-hidden w-full h-screen z-0 relative" v-else>
       <Splash :setLoading="setLoading" />
     </main>
   </Fragment>
@@ -22,7 +22,6 @@
     text-decoration: none;
     color: currentColor;
   }
-
   .mix-difference {
     mix-blend-mode: difference;
   }

@@ -1,11 +1,11 @@
 <template>
-    <nav class="w-100 flex-row justify-center items-center overflow-hidden" ref="container">
+    <nav class="w-full flex flex-row justify-center items-center overflow-hidden" ref="container">
         <ul class="mix-difference">
             <li v-for="item in items" :key="item.path" ref="item">
                 <nuxt-link
                     :to="item.path"
                     @click.native="handleClick"
-                    class="font-xl weight-700 block w-100 position-relative ph-m"
+                    class="text-5xl font-bold block w-full relative px-lg"
                 >
                     {{ item.value }}
                 </nuxt-link>

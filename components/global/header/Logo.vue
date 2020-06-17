@@ -1,31 +1,30 @@
 <template>
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 45" class="logo w-100 cursor-pointer" @click="handleClick">
-    <g>
-      <path d="M60,28.41l-1,1.7-1.85,3.21-1.86-3.21-1-1.7L43.58,9.81,32.84,28.41h0l-1,1.7L30,33.32l-1.85-3.21-1-1.7h0L16.42,9.81,5.67,28.41h0l-1,1.7L2.83,33.32,1,30.11l-1-1.7L16.42,0,30,23.51,43.58,0Z"/>
-      <path d="M60,40.09l-1,1.7L57.17,45l-1.86-3.21-1-1.7L43.58,21.49,32.84,40.09h0l-1,1.7L30,45l-1.85-3.21-1-1.7h0L16.42,21.49,5.67,40.09h0l-1,1.7L2.83,45,1,41.79l-1-1.7L16.42,11.68,30,35.19,43.58,11.68Z"/>
-    </g>
-  </svg>
+  <div class="logo overflow-hidden flex-row justify-center items-center">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 39.68 43.72" class="w-100 cursor-pointer" @click="handleClick">
+      <g>
+          <g>
+              <polygon points="0 23.5 7.09 30.59 7.09 43.72 0 36.63 0 23.5"/>
+              <polygon points="39.68 0 39.68 36.63 32.59 43.72 32.59 17.11 24.85 24.85 19.83 29.86 14.84 24.85 14.82 24.85 7.09 17.11 7.09 27.27 0 20.18 0 0 19.84 19.84 39.68 0"/>
+          </g>
+      </g>
+    </svg>
+  </div>
 </template>
 
-<style>
-  .logo {
-    max-width: 36px;
+<style scoped>
+  svg {
+    max-width: 26px;
   }
 
-  svg path {
+  svg g {
     fill: currentColor;
   }
 </style>
 
 <script>
-import MagicTitle from '~/components/global/super/MagicTitle.vue'
 import { TimelineLite, Expo } from 'gsap'
 
 export default {
-    components: {
-        MagicTitle
-    },
-
     data() {
       return {
         navigator: new this.$Navigator(this.$store, this.$router)
@@ -36,12 +35,11 @@ export default {
         const timeline = new TimelineLite() 
         const easing = Expo.easeInOut
 
-        timeline.staggerFromTo(
-            '.logo path',
+        timeline.fromTo(
+            '.logo > svg',
             1.5,
-            { y: 30, alpha: 0, ease: easing },
-            { y: 0, alpha: 1, ease: easing },
-            .15,
+            { y: '100%', ease: easing },
+            { y: '0%', ease: easing },
         )
     },
 

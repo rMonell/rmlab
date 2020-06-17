@@ -1,3 +1,4 @@
+var path = require('path');
 
 export default {
   mode: 'universal',
@@ -23,12 +24,14 @@ export default {
   ** Global CSS
   */
   css: [
-    '@/assets/css/sakura.css'
+    '@/assets/css/tailwind.scss'
   ],
   /*
   ** Plugins to load before mounting the App
   */
-  plugins: ['~/plugins/navigator.js'],
+  plugins: [
+    '~/plugins/navigator.js'
+  ],
   /*
   ** Nuxt.js dev-modules
   */
@@ -43,6 +46,7 @@ export default {
     '@nuxtjs/pwa',
     // Doc: https://github.com/nuxt-community/dotenv-module
     '@nuxtjs/dotenv',
+    'nuxt-purgecss'
   ],
   /*
   ** Axios module configuration
@@ -54,10 +58,15 @@ export default {
   ** Build configuration
   */
   build: {
-    /*
-    ** You can extend webpack config here
-    */
-    extend (config, ctx) {
+    extend(config, ctx) {},
+    extractCSS: true,
+    postcss: {
+      plugins: {
+        tailwindcss: path.resolve(__dirname, './tailwind.config.js')
+      }
+    },
+    purgeCSS: {
+      mode: 'postcss'
     }
   }
 }

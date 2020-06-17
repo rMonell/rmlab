@@ -1,9 +1,9 @@
 <template>
-    <div class="w-100 h-100 flex-row justify-center items-center">
+    <div class="w-full h-full flex flex-row justify-center items-center">
         <div class="main-progress overflow-hidden">
-            <span ref="mainProgress" class="block weight-700">{{ progress.value + '%' }}</span>
+            <span ref="mainProgress" class="block font-bold">{{ progress.value + '%' }}</span>
         </div>
-        <span ref="backgroundProgress" class="background-progress position-absolute-c weight-700">{{ progress.value + '%' }}</span>
+        <span ref="backgroundProgress" class="background-progress absolute pin-c font-bold">{{ progress.value + '%' }}</span>
 
         <div class="progress-overlay w-100 h-100 position-absolute-tl" ref="progressOverlay"></div>
     </div>

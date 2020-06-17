@@ -1,16 +1,16 @@
 <template>
-    <div class="mw-100 align-center m:mw-50 m:align-left mh-auto">
+    <div class="max-w-full text-center m:mw-50 md:text-left mx-auto">
         <MagicTitle
             value="À propos"
             tag="h1"
-            className="font-xl weight-700 uppercase mb-l"
+            className="text-4xl font-bold uppercase mb-xl"
 
             from="bottom"
             to="initialY"
         />
-        <div class="font-l-400 mbox-bm" ref="para">
-            <p>Etiam vitae tortor. Nullam accumsan lorem in dui. Proin faucibus arcu quis ante. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-            <p>Etiam vitae tortor. Nullam accumsan lorem in dui. Proin faucibus arcu quis ante. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+        <div class="text-lg" ref="para">
+            <p class="mb-md last:mb-0">Etiam vitae tortor. Nullam accumsan lorem in dui. Proin faucibus arcu quis ante. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+            <p class="mb-md last:mb-0">Etiam vitae tortor. Nullam accumsan lorem in dui. Proin faucibus arcu quis ante. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
         </div>
     </div>
 </template>

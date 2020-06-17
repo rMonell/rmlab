@@ -1,27 +1,27 @@
 <template>
-    <div class="flex-column items-center index-10">
+    <div class="flex flex-col items-center z-10">
         <div>
             <MagicTitle
                 value="Me contacter"
                 tag="h1"
-                className="font-xl weight-700 uppercase mb-l align-center m:align-left"
+                className="text-4xl font-bold uppercase mb-xl text-center md:text-left"
 
                 from="bottom"
                 to="initialY"
             />
 
-            <div class="mbox-bm contact-list">
-                <a class="flex-row items-center" href="https://www.linkedin.com/in/renaud-monell/" target="_blank">
-                    <i class="mr-m">
+            <div class=" contact-list">
+                <a class="flex flex-row items-center mb-xl" href="https://www.linkedin.com/in/renaud-monell/" target="_blank">
+                    <i class="mr-lg">
                         <img src="~/assets/images/linkedin.svg">
                     </i>
-                    <span class="font-l-400">https://www.linkedin.com/in/renaud-monell/</span>
+                    <span class="text-lg leading-none">https://www.linkedin.com/in/renaud-monell/</span>
                 </a>
-                <a class="flex-row items-center" href="mailto:renaud.monell@gmail.com">
-                    <i class="mr-m">
+                <a class="flex flex-row items-center" href="mailto:renaud.monell@gmail.com">
+                    <i class="mr-lg">
                         <img src="~/assets/images/mail.svg">
                     </i>
-                    <span class="font-l-400">renaud.monell@gmail.com</span>
+                    <span class="text-lg leading-none">renaud.monell@gmail.com</span>
                 </a>
             </div>
            

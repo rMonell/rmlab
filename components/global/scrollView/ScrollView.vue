@@ -1,6 +1,6 @@
 <template>
     <section
-        class="w-100 h-100-vh flex-row justify-center items-center p-m m:p-l position-relative"
+        class="w-full h-screen flex flex-row justify-center items-center p-lg md:p-xl relative"
         @wheel="handleScroll"
         v-touch:swipe.top="() => navigator.prev(this.$store)"
         v-touch:swipe.bottom="() => navigator.next(this.$store)"

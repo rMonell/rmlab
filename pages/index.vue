@@ -1,11 +1,11 @@
 <template>
     <Fragment>
-        <div class="flex-column items-center index-10">
-            <div class="align-center">
+        <div class="flex flex-col items-center z-10">
+            <div class="text-center">
                 <MagicTitle
                     value="Renaud Monell"
                     tag="h1"
-                    className="weight-700 font-xl m:font-hero uppercase"
+                    className="font-bold md:text-6xl text-3xl uppercase"
 
                     from="bottom"
                     to="initialY"
@@ -13,14 +13,14 @@
                 <MagicTitle
                     value="Développeur front-end"
                     tag="h2"
-                    className="font-l weight-400"
+                    className="text-xl font-normal"
 
                     from="bottom"
                     to="initialY"
                     :delay=".15"
                 />
             </div>
-            <div class="mt-m flex-column justify-end items-center position-absolute-b pb-l fill-container">
+            <div class="mt-m flex flex-col justify-end items-center absolute bottom-0 pb-xl fill-container">
                 <span
                     ref="fill"
                     class="fill"
@@ -28,8 +28,7 @@
                 <MagicTitle
                     value="Scroll"
                     tag="span"
-                    className="font-m"
-
+                    className="text-sm mt-sm"
                     from="bottom"
                     to="initialY"
                     :delay=".15"

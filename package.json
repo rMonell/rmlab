@@ -14,11 +14,12 @@
     "@nuxtjs/axios": "^5.3.6",
     "@nuxtjs/dotenv": "^1.4.0",
     "@nuxtjs/pwa": "^3.0.0-0",
-    "cloudinary-vue": "^1.0.1",
     "gsap": "^3.2.6",
     "node-sass": "^4.14.1",
     "nuxt": "^2.0.0",
+    "nuxt-purgecss": "^1.0.0",
     "sass-loader": "^8.0.2",
+    "tailwindcss": "^1.4.6",
     "three": "^0.116.1",
     "vue-fragment": "^1.5.1",
     "vue2-touch-events": "^2.2.1"
