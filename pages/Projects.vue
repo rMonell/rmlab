@@ -9,7 +9,7 @@
                 from="bottom"
                 to="initialY"
             />
-            <ProjectList />
+            <ProjectList :items="items" />
         </div>
     </div>
 </template>
@@ -17,10 +17,23 @@
 <script>
 import MagicTitle from '~/components/global/super/MagicTitle.vue'
 import ProjectList from '~/components/projectList/ProjectList.vue'
+import { createClient } from "~/plugins/contentful.js";
+
+const client = createClient();
 
 export default {
     components: {
         MagicTitle, ProjectList
+    },
+
+    asyncData({ env }) {
+        return Promise.all([client.getEntries({ content_type: "project" })])
+        .then(([entries]) => {
+            return {
+                items: entries.items
+            }
+        })
+        .catch(console.error);
     },
 }
 </script>

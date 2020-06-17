@@ -7,12 +7,16 @@ module.exports = {
         fontFamily: {
             'sans': ['Poppins']
         },
-        spacing: {
-            0: '0px',
-            sm: '5px',
-            md: '10px',
-            lg: '20px',
-            xl: '40px',
+        extend: {
+            spacing: {
+                sm: '5px',
+                md: '10px',
+                lg: '20px',
+                xl: '40px',
+            },
+            transitionTimingFunction: {
+                'ease-expo': 'cubic-bezier(0.9, 0.01, 0.2, 1)',
+            }
         }
     },
     variants: {

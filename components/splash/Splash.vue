@@ -5,7 +5,7 @@
         </div>
         <span ref="backgroundProgress" class="background-progress absolute pin-c font-bold">{{ progress.value + '%' }}</span>
 
-        <div class="progress-overlay w-100 h-100 position-absolute-tl" ref="progressOverlay"></div>
+        <div class="progress-overlay w-full h-full absolute top-0 left-0" ref="progressOverlay"></div>
     </div>
 </template>
 
