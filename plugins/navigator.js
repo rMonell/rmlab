@@ -26,7 +26,7 @@ Vue.prototype.$Navigator = function (store, router) {
         overlay.style[direction] = 'initial'
         
         timeline.to(overlay, .75, { height: '100%',  ease: easing, onComplete: () => this.routePusher(route, index) })
-        timeline.to(overlay, .75, { height: '0', [direction]: 0, [oppositeDirection]: 'initial', ease: easing, onComplete: () => this.isPlayingTimeline = false})
+        timeline.to(overlay, .75, { height: '0', [direction]: 0, [oppositeDirection]: 'initial', ease: easing, onComplete: () =>  this.isPlayingTimeline = false })
     }
 
     this.playTimeline = (direction, route) => {

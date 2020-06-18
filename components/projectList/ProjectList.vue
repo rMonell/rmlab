@@ -1,27 +1,30 @@
 <template>
-  <div class="container">
+  <div class="w-full">
     <div class="overflow-hidden w-full mb-xl" ref="carrouselContainer">
       <div ref="carrouselInner" class="flex flex-row transition-transform duration-700 ease-expo">
-        <project-item v-for="(item, key) in items" :key="key" :item="item" class="px-5" />
+        <project-item v-for="(item, key) in items" :key="key" :item="item" />
       </div>
     </div>
-    <div class="flex flex-row justify-between">
-      <project-list-navigation action="prev" :index="index" @index-change="goToItem" />
-      <div class="flex flex-row items-center text-sm">
-        <span>{{ index + 1 }}</span>
-        <span class="mx-sm">/</span>
-        <span>{{ items.length }}</span>
+    <div class="overflow-hidden">
+      <div class="flex flex-row justify-between w-full" ref="carrouselNavContainer">
+        <project-list-navigation action="prev" :index="index" @index-change="goToItem" />
+        <div class="flex flex-row items-center text-sm">
+          <span>{{ index + 1 }}</span>
+          <span class="mx-sm">/</span>
+          <span>{{ items.length }}</span>
+        </div>
+        <project-list-navigation action="next" :index="index" @index-change="goToItem" />
       </div>
-      <project-list-navigation action="next" :index="index" @index-change="goToItem" />
     </div>
   </div>
 </template>
 
 
 <script>
+import { TimelineLite, Expo } from "gsap";
+
 import ProjectItem from "./ProjectItem";
 import ProjectListNavigation from "./ProjectListNavigation";
-import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 
 export default {
   components: {
@@ -48,25 +51,39 @@ export default {
       } else this.index = index;
     },
     setCarrouselInnerWidth() {
-      console.log(this.$refs["carrouselContainer"].offsetWidth)
-      
       this.$refs["carrouselInner"].style.width =
         this.$refs["carrouselContainer"].offsetWidth * this.items.length + "px";
+    },
+    setCarrouselInnerTransform() {
+      this.$refs["carrouselInner"].style.transform = `translateX(-${this.index *
+        this.$refs["carrouselContainer"].offsetWidth}px)`;
+    },
+    setCarrouselInnerProperties() {
+      this.setCarrouselInnerWidth();
+      this.setCarrouselInnerTransform();
     }
   },
   watch: {
     index() {
-      this.$refs["carrouselInner"].style.transform = `translateX(-${this.index * this.$refs["carrouselContainer"].offsetWidth}px)`
+      this.setCarrouselInnerTransform();
     }
   },
   created() {
-    window.addEventListener('resize', this.setCarrouselInnerWidth);
+    window.addEventListener("resize", this.setCarrouselInnerProperties);
   },
   destroyed() {
-    window.removeEventListener('resize', this.setCarrouselInnerWidth);
+    window.removeEventListener("resize", this.setCarrouselInnerProperties);
   },
   mounted() {
     this.setCarrouselInnerWidth();
+
+    const timeline = new TimelineLite();
+    const easing = Expo.easeInOut;
+
+    timeline.from(this.$refs["carrouselNavContainer"], 1.5, {
+      y: "100%",
+      ease: easing
+    });
   }
 };
 </script>

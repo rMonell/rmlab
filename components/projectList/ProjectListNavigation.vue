@@ -47,9 +47,6 @@ svg {
     &.prev { transform: rotate(180deg) }
 
     &:hover {
-        &.next { transform: translateX(5px) }
-        &.prev { transform: rotate(180deg) translateX(-5px) }
-
         .arrow-line { stroke-dashoffset: -20% }
     } 
 }

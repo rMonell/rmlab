@@ -1,0 +1,35 @@
+<template>
+    <footer class="absolute bottom-0 left-0 flex flex-row justify-between items-center w-full p-lg md:p-xl z-40 mix-difference">
+        <span class="text-xs cursor-pointer" @click="setStore('locale', locale.value)">{{ locale.text }}</span>
+        <div class="flex">
+            <span
+                class="rounded-full w-4 h-4 border-2 bg-black cursor-pointer mr-sm"
+                @click="setStore('theme', 'dark')"
+            />
+            <span
+                class="rounded-full w-4 h-4 border-2 bg-white cursor-pointer"
+                @click="setStore('locale', 'light')"
+            />
+        </div>
+    </footer>
+</template>
+
+<script>
+export default {
+    computed: {
+        locale() {
+            const result = this.$store.state.locale.value === 'fr-FR' ? 'en-US' : 'fr-FR'
+
+            return {
+                text: result.slice(0, 2).toUpperCase(),
+                value: result
+            }
+        }
+    },
+    methods: {
+        setStore(target, value) {
+            this.$store.commit(target + '/set', value)
+        }
+    }
+}
+</script>

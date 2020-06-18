@@ -1,25 +1,30 @@
 <template>
-  <button
+  <component
+    :is="tag"
     :type="type"
-    class="border-2 text-sm font-bold uppercase px-lg py-2 focus:outline-none hover:bg-current transition-colors"
+    class="border-2 text-sm font-bold uppercase px-lg py-2 focus:outline-none hover:bg-current transition-colors duration-300"
     @click="onClick"
   >
     <span class="mix-difference">
       <slot />
     </span>
-  </button>
+  </component>
 </template>
 
 <script>
 export default {
   props: {
+    tag: {
+      type: String,
+      default: 'button'
+    },
     type: {
       type: String,
       required: false
     },
     onClick: {
       type: Function,
-      required: false
+      default: () => {}
     }
   }
 };

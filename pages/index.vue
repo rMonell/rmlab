@@ -11,7 +11,7 @@
                     to="initialY"
                 />
                 <MagicTitle
-                    value="Développeur front-end"
+                    :value="specialization"
                     tag="h2"
                     className="text-xl font-normal"
 
@@ -26,7 +26,7 @@
                     class="fill"
                 />
                 <MagicTitle
-                    value="Scroll"
+                    :value="scrollIndication"
                     tag="span"
                     className="text-sm mt-sm"
                     from="bottom"
@@ -49,6 +49,15 @@ import { Fragment } from 'vue-fragment'
 export default {
     components: {
         MagicTitle, Fragment, HeroScene
+    },
+
+    computed: {
+        specialization() {
+            return this.$store.state.locale.staticTrans.index[this.$store.state.locale.value].specialization
+        },
+        scrollIndication() {
+            return this.$store.state.locale.staticTrans.index[this.$store.state.locale.value].scrollIndication
+        }
     },
 
     mounted() {

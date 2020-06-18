@@ -26,22 +26,27 @@ export default {
     MagicTitle
   },
 
-  asyncData({ env }) {
-    return Promise.all([client.getEntries({ content_type: "about" })])
-      .then(([entries]) => {
-        const options = {
-          renderNode: {
-            [BLOCKS.PARAGRAPH]: (node, next) => `<p class="mb-lg last:mb-0">${next(node.content)}</p>`,
-            [INLINES.HYPERLINK]: (node, next) => `<a class="text-blue-500 hover:text-blue-400" href="${node.data.uri}" target="_blank">${next(node.content)}</a>`
-          }
-        };
+  computed: {
+    title() {
+      return this.$store.state.locale.staticTrans.about[this.$store.state.locale.value].title
+    }
+  },
 
-        return {
-          title: entries.items[0].fields.title,
-          content: documentToHtmlString(entries.items[0].fields.body, options)
-        };
-      })
-      .catch(console.error);
+  asyncComputed: {
+    content() {
+      return Promise.all([client.getEntries({ content_type: "about", locale: this.$store.state.locale.value })])
+        .then(([entries]) => {
+          const options = {
+            renderNode: {
+              [BLOCKS.PARAGRAPH]: (node, next) => `<p class="mb-lg last:mb-0">${next(node.content)}</p>`,
+              [INLINES.HYPERLINK]: (node, next) => `<a class="text-blue-500 hover:text-blue-400" href="${node.data.uri}" target="_blank">${next(node.content)}</a>`
+            }
+          };
+
+          return documentToHtmlString(entries.items[0].fields.body, options)
+        })
+        .catch(console.error);
+    }
   },
 
   mounted() {

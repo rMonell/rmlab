@@ -23,7 +23,6 @@ export default {
     data() {
         return {
             duration: 1500,
-
             progress: { value: 0 },
         }
     },
