@@ -8,7 +8,7 @@
         from="bottom"
         to="initialY"
       />
-      <ProjectList :items="items" />
+      <ProjectList v-if="items" :items="items" />
     </div>
   </div>
 </template>
@@ -25,22 +25,19 @@ export default {
     MagicTitle,
     ProjectList
   },
-
-  asyncData({ env }) {
-    return Promise.all([client.getEntries({ content_type: "project" })])
-      .then(([entries]) => {
-        return {
-          items: entries.items
-        };
-      })
-      .catch(console.error);
-  },
   computed: {
     title() {
       return this.$store.state.locale.staticTrans.projects[
         this.$store.state.locale.value
       ].title;
     }
-  }
+  },
+  asyncComputed: {
+    items() {
+      return Promise.all([client.getEntries({ content_type: "project", locale: this.$store.state.locale.value })])
+        .then(([entries]) => entries.items)
+        .catch(console.error);
+    }
+  },
 };
 </script>
