@@ -1,6 +1,11 @@
 <template>
-    <footer class="absolute bottom-0 left-0 flex flex-row justify-between items-center w-full p-lg md:p-xl z-40 mix-difference">
-        <span class="text-xs cursor-pointer" @click="setStore('locale', locale.value)">{{ locale.text }}</span>
+    <footer class="fixed bottom-0 left-0 flex flex-row justify-between items-center w-full p-lg md:p-xl z-40">
+        <div class="mix-difference">
+            <span
+                class="text-xs cursor-pointer"
+                @click="setStore('locale', locale.value)"
+            > {{ locale.text }}</span>
+        </div>
         <div class="flex">
             <span
                 class="rounded-full w-4 h-4 border-2 bg-black cursor-pointer mr-sm"

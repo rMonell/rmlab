@@ -8,19 +8,24 @@ module.exports = {
             'sans': ['Poppins']
         },
         extend: {
+            zIndex: {
+                back: -1
+            },
             spacing: {
                 sm: '5px',
                 md: '10px',
                 lg: '20px',
                 xl: '40px',
+                '2xl': '80px',
             },
             transitionTimingFunction: {
                 'expo': 'cubic-bezier(0.9, 0.01, 0.2, 1)',
+                'out-min': 'cubic-bezier(0, 0, 0.7, 1)'
             }
         }
     },
     variants: {
-        margin: ['last']
+        margin: ['last', 'responsive']
     },
     corePlugins: {
         container: false

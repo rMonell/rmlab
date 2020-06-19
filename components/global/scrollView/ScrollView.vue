@@ -1,43 +1,67 @@
 <template>
-    <section
-        class="w-full h-screen flex flex-row justify-center items-center p-lg md:p-xl relative"
-        @wheel="handleScroll"
-        v-touch:swipe.top="() => navigator.prev(this.$store)"
-        v-touch:swipe.bottom="() => navigator.next(this.$store)"
-    >
-        <slot />
+  <section
+    :class="sectionClassName"
+    @wheel="handleScroll"
+    v-touch:swipe.top="() => !this.$route.params.slug && navigator.prev(this.$store)"
+    v-touch:swipe.bottom="() => !this.$route.params.slug && navigator.next(this.$store)"
+    ref="section"
+  >
+    <slot />
 
-        <div ref="overlay" id="app-overlay" class="overlay" />
-    </section>
+    <div ref="overlay" id="app-overlay" class="overlay" />
+  </section>
 </template>
 
 <script>
-import Vue from 'vue'
-import Vue2TouchEvents from 'vue2-touch-events'
-Vue.use(Vue2TouchEvents)
+import Vue from "vue";
+import Vue2TouchEvents from "vue2-touch-events";
+Vue.use(Vue2TouchEvents);
 
 export default {
-    data () {
-      return {
-          navigator: new this.$Navigator(this.$store, this.$router)
+  data() {
+    return {
+      navigator: new this.$Navigator(this.$store, this.$router),
+      y: 0
+    };
+  },
+  computed: {
+    sectionClassName() {
+      return `w-full flex flex-row justify-center items-center relative transition-transform duration-300 ease-out-min z-back ${!this
+        .$route.params.slug && "h-screen p-lg md:p-xl"}`;
+    }
+  },
+  methods: {
+    handleScroll(event) {
+      if (!this.$route.params.slug) {
+        event.deltaY > 0
+          ? this.navigator.next(this.$store)
+          : this.navigator.prev(this.$store);
+      } else {
+        event.deltaY > 0 ? this.translateSection(-1) : this.translateSection(1);
       }
     },
+    translateSection(direction) {
+      const amount = 80 * direction;
 
-    methods: {
-        handleScroll (event) {
-            event.deltaY > 0 ? this.navigator.next(this.$store) : this.navigator.prev(this.$store)
-        }
+      if (this.y + amount > 0) {
+        this.y = 0;
+      } else if (this.y + amount <= (this.$refs['section'].clientHeight - document.body.offsetHeight) * -1) {
+        this.y = (this.$refs['section'].clientHeight - document.body.offsetHeight) * -1
+      } else this.y = this.y + amount;
+
+      this.$refs["section"].style.transform = `translateY(${this.y}px)`;
     }
-}
+  }
+};
 </script>
 
-<style>
-    .overlay {
-        position: absolute;
-        left: 0;
-        width: 100%;
-        height: 0%;
-        background-color: currentColor;
-        z-index: 500;
-    }
+<style scoped>
+.overlay {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  background-color: currentColor;
+  z-index: 500;
+}
 </style>

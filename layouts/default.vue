@@ -1,6 +1,6 @@
 <template>
   <fragment>
-    <main class="overflow-hidden w-full h-screen z-0 relative" v-if="loading">
+    <main class="overflow-hidden w-full z-0 relative h-screen" v-if="loading">
       <app-header />
       <app-menu />
       <app-footer />
@@ -44,7 +44,7 @@ export default {
 
   data() {
     return {
-      loading: false
+      loading: false,
     };
   },
 

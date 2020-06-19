@@ -37,7 +37,7 @@ svg {
 
 .arrow-line {
   stroke-dasharray: 100%;
-  stroke-dashoffset: -10%;
+  stroke-dashoffset: -40%;
   transition: stroke-dashoffset .3s ease;
 }
 
@@ -47,7 +47,7 @@ svg {
     &.prev { transform: rotate(180deg) }
 
     &:hover {
-        .arrow-line { stroke-dashoffset: -20% }
+        .arrow-line { stroke-dashoffset: -60% }
     } 
 }
 </style>
