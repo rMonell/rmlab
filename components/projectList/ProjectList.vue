@@ -5,15 +5,15 @@
         <project-item v-for="(item, key) in items" :key="key" :item="item" />
       </div>
     </div>
-    <div class="overflow-hidden">
+    <div class="overflow-y-hidden px-lg">
       <div class="flex flex-row justify-between w-full" ref="carrouselNavContainer">
-        <arrow class="transform rotate-180" :onClick="() => goToItem(index - 1)" />
+        <arrow class="transform rotate-180 hover:-translate-x-2 duration-300 ease-out" :onClick="() => goToItem(index - 1)" />
         <div class="flex flex-row items-center text-sm">
           <span>{{ index + 1 }}</span>
-          <span class="mx-sm">/</span>
+          <span class="mx-sm border-b w-3" />
           <span>{{ items.length }}</span>
         </div>
-        <arrow :onClick="() => goToItem(index + 1)" />
+        <arrow class="transform hover:translate-x-2 duration-300 ease-out" :onClick="() => goToItem(index + 1)" />
       </div>
     </div>
   </div>

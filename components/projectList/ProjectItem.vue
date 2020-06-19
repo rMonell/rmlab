@@ -16,7 +16,7 @@
             <div class="flex">
               <div v-for="(role, key) in item.fields.role" :key="key">
                 <span class="text-sm">{{ role.fields.name }}</span>
-                <span class="mx-sm border-b w-3" v-if="key != item.fields.role.length - 1"></span>
+                <span class="mx-sm text-sm" v-if="key != item.fields.role.length - 1">-</span>
               </div>
             </div>
           </div>
@@ -59,10 +59,11 @@ export default {
     const timeline = new TimelineLite();
     const easing = Expo.easeInOut;
 
-    timeline.from(
+    timeline.fromTo(
       this.$refs["projectImage"],
       2,
-      { height: 0, ease: easing },
+      { height: '0%', ease: easing },
+      { height: '100%', ease: easing },
     );
 
     timeline.fromTo(
