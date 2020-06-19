@@ -25,7 +25,6 @@
     "three": "^0.116.1",
     "vue-async-computed": "^3.8.2",
     "vue-fragment": "^1.5.1",
-    "vue-scrollmagic": "^1.2.0",
     "vue2-touch-events": "^2.2.1"
   },
   "devDependencies": {}
