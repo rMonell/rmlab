@@ -1,7 +1,7 @@
 <template>
   <nav class="w-full flex flex-row justify-center items-center overflow-hidden" ref="container">
     <ul class="mix-difference">
-      <li v-for="item in items" :key="item.path" ref="item">
+      <li v-for="item in items" :key="item.path" class="text-white" ref="item">
         <nuxt-link
           :to="item.path"
           @click.native="handleClick"

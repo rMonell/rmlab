@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-col items-center z-10">
     <div>
-      <MagicTitle
+      <magic-title
         :value="title"
         tag="h1"
         class="text-4xl font-bold uppercase mb-xl text-center md:text-left"
@@ -15,15 +15,11 @@
           href="https://www.linkedin.com/in/renaud-monell/"
           target="_blank"
         >
-          <i class="mr-lg">
-            <img src="~/assets/images/linkedin.svg" />
-          </i>
+          <linkedin class="mr-lg" />
           <span class="text-lg leading-none">https://www.linkedin.com/in/renaud-monell/</span>
         </a>
         <a class="flex flex-row items-center" href="mailto:renaud.monell@gmail.com">
-          <i class="mr-lg">
-            <img src="~/assets/images/mail.svg" />
-          </i>
+          <mail class="mr-lg" />
           <span class="text-lg leading-none">renaud.monell@gmail.com</span>
         </a>
       </div>
@@ -32,12 +28,17 @@
 </template>
 
 <script>
-import MagicTitle from "~/components/global/super/MagicTitle.vue";
 import { TimelineLite, Expo } from "gsap";
+
+import Linkedin from "~/components/vectors/Linkedin";
+import Mail from "~/components/vectors/Mail";
+import MagicTitle from "~/components/global/super/MagicTitle";
 
 export default {
   components: {
-    MagicTitle
+    'magic-title': MagicTitle,
+    'linkedin': Linkedin,
+    'mail': Mail
   },
 
   mounted() {

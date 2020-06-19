@@ -85,7 +85,7 @@ import { TimelineLite, Expo } from 'gsap'
         cursor: pointer;
         border: none;
         background-color: transparent;
-        color: currentColor;
+        color: #fff;
 
         &:hover:after {
             transform-origin: top;

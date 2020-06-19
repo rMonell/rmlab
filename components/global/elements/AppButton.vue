@@ -2,10 +2,10 @@
   <component
     :is="tag"
     :type="type"
-    class="border-2 text-sm font-bold uppercase px-lg py-2 focus:outline-none hover:bg-current transition-colors duration-300"
+    :class="`border-2 text-sm font-bold uppercase px-lg py-2 focus:outline-none transition-colors duration-300 ${themeClassName}`"
     @click="onClick"
   >
-    <span class="mix-difference pointer-events-none">
+    <span class="pointer-events-none">
       <slot />
     </span>
   </component>
@@ -25,6 +25,14 @@ export default {
     onClick: {
       type: Function,
       default: () => {}
+    }
+  },
+  computed: {
+    themeClassName() {
+      const fix = this.$store.state.theme.value === 'dark' ? 'border-white' : 'border-black'
+      const hover = this.$store.state.theme.value === 'dark' ? 'hover:bg-white hover:color-dark hover:text-black' : 'hover:bg-black hover:color-white hover:text-white'
+
+      return `${fix} ${hover}`
     }
   }
 };

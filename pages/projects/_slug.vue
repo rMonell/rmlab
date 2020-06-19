@@ -1,34 +1,39 @@
 <template>
     <div v-if="item" class="w-full z-back">
       <div class="container p-lg md:p-xl mt-2xl">
-        <div class="flex items-center mb-lg cursor-pointer" @click="handleClick">
-          <arrow class="transform rotate-180" />
-          <span class="text-base font-normal ml-sm">Retour</span>
-        </div>
+          <div  class="flex mb-lg">
+            <back-button />
+          </div>
           <magic-title
               :value="item.name"
               tag="h1"
-              className="text-3xl md:text-6xl leading-tight uppercase font-bold mb-xl"
+              className="text-3xl md:text-6xl leading-tight uppercase font-bold mb-lg"
 
               from="bottom"
               to="initialY"
           />
+          <div class="mb-xl overflow-hidden">
+            <div class="flex justify-between w-full" ref="projectInfos">
+              <div>
+                <h2 class="text-sm font-bold">{{ role }}</h2>
+                <div class="flex">
+                  <div v-for="(role, key) in item.role" :key="key">
+                    <span class="text-sm">{{ role.fields.name }}</span>
+                    <span class="text-sm mx-sm" v-if="key != item.role.length - 1">/</span>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <h2 class="text-sm font-bold">{{ year }}</h2>
+                <span class="text-sm">{{ item.year }}</span>
+              </div>
+            </div>
+          </div>
           <div
-              class="w-full h-64 bg-cover bg-center bg-no-repeat mb-lg"
+              class="w-full h-64 bg-cover bg-center bg-no-repeat mb-xl"
               :style="`background-image: url(${item.mainPicture.fields.file.url}); height: 30vw; min-height: 200px;`"
               ref="projectPicture"
           />
-          <div class="mb-xl overflow-hidden">
-            <div class="flex justify-between w-full" ref="projectInfos">
-              <div class="flex">
-                <div v-for="(role, key) in item.role" :key="key">
-                  <span class="text-sm">{{ role.fields.name }}</span>
-                  <span class="text-sm mx-sm" v-if="key != item.role.length - 1">/</span>
-                </div>
-              </div>
-              <span class="text-sm">{{ item.year }}</span>
-            </div>
-          </div>
           <div v-html="item.body" ref="projectBody" />
         </div>
         <div class="bg-current p-lg md:p-xl flex flex-col md:flex-row" ref="imagesGrid">
@@ -61,19 +66,14 @@ import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 import { TimelineLite, Expo } from 'gsap'
 
 import MagicTitle from '~/components/global/super/MagicTitle.vue'
-import Arrow from "~/components/global/super/Arrow";
+import BackButton from "~/components/global/elements/BackButton";
 
 const client = createClient();
 
 export default {
   components: {
     'magic-title': MagicTitle,
-    'arrow': Arrow
-  },
-  data() {
-    return {
-      navigator: new this.$Navigator(this.$store, this.$router)
-    }
+    'back-button': BackButton
   },
   asyncComputed: {
     item() {
@@ -99,6 +99,14 @@ export default {
         .catch(console.error);
     }
   },
+  computed: {
+    role() {
+      return this.$store.state.locale.staticTrans.projects[this.$store.state.locale.value].role
+    },
+    year() {
+      return this.$store.state.locale.staticTrans.projects[this.$store.state.locale.value].year
+    }
+  },
   watch: {
     item() {
       const timeline = new TimelineLite();
@@ -110,12 +118,6 @@ export default {
         timeline.from(this.$refs['projectBody'], 1.5, { x: 100, alpha: 0, ease: easing }, '-=1.15')
       });
     },
-  },
-  methods: {
-    handleClick(event) {
-        event.preventDefault()
-        this.navigator.set('/projects')
-    }
   }
 };
 </script>
