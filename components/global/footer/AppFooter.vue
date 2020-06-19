@@ -8,12 +8,12 @@
         </div>
         <div class="flex">
             <span
-                class="rounded-full w-4 h-4 border-2 bg-black cursor-pointer mr-sm"
+                class="rounded-full w-4 h-4 border-2 border-current bg-black cursor-pointer mr-sm"
                 @click="setStore('theme', 'dark')"
             />
             <span
-                class="rounded-full w-4 h-4 border-2 bg-white cursor-pointer"
-                @click="setStore('locale', 'light')"
+                class="rounded-full w-4 h-4 border-2 border-current bg-white cursor-pointer"
+                @click="setStore('theme', 'light')"
             />
         </div>
     </footer>

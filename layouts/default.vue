@@ -1,28 +1,19 @@
 <template>
   <fragment>
-    <main class="overflow-hidden w-full z-0 relative h-screen" v-if="loading">
+    <main :class="`overflow-hidden w-full z-0 relative h-screen ${themeClassName}`" v-if="loading">
       <app-header />
       <app-menu />
       <app-footer />
+      <div ref="overlay" id="app-overlay" class="overlay" />
       <scroll-view>
         <nuxt />
       </scroll-view>
     </main>
-    <main class="overflow-hidden w-full h-screen z-0 relative" v-else>
+    <main :class="`overflow-hidden w-full h-screen z-0 relative ${themeClassName}`" v-else>
       <splash :setLoading="setLoading" />
     </main>
   </fragment>
 </template>
-
-<style>
-main {
-  background-color: #000;
-  color: #fff;
-}
-.mix-difference {
-  mix-blend-mode: difference;
-}
-</style>
 
 <script>
 import AppHeader from "~/components/global/header/AppHeader.vue";
@@ -48,6 +39,15 @@ export default {
     };
   },
 
+  computed: {
+    themeClassName() {
+      const bgClass = this.$store.state.theme.value === 'dark' ? 'bg-black' : 'bg-white'
+      const colorClass = this.$store.state.theme.value === 'dark' ? 'text-white' : 'text-black'
+
+      return `${bgClass} ${colorClass}`
+    }
+  },
+
   mounted() {
     const index = this.$store.state.section.tree.indexOf($nuxt.$route.path)
 
@@ -68,3 +68,15 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+.overlay {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  background-color: currentColor;
+  z-index: 500;
+}
+</style>
+

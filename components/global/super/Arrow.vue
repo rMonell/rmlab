@@ -1,5 +1,5 @@
 <template>
-  <div @click="indexChange(action === 'next' ? index + 1 : index - 1)" :class="`svg-container cursor-pointer ${action}`">
+  <div @click="onClick" class="svg-container cursor-pointer">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 16.97" class="w-full">
       <line y1="8.49" x2="30.48" y2="8.49" class="arrow-line" />
       <line class="cls-1" x1="22.8" y1="0.71" x2="31.29" y2="9.19" />
@@ -10,21 +10,12 @@
 
 <script>
 export default {
-  props: {
-    action: {
-      type: String,
-      default: 'next'
-    },
-    index: {
-        type: Number,
-        required: true
+    props: {
+        onClick: {
+            type: Function,
+            default: () => {}
+        }
     }
-  },
-  methods: {
-    indexChange(index) {
-      this.$emit("index-change", index);
-    }
-  }
 };
 </script>
 
@@ -43,8 +34,6 @@ svg {
 
 .svg-container {
     transition: transform .5s ease;
-
-    &.prev { transform: rotate(180deg) }
 
     &:hover {
         .arrow-line { stroke-dashoffset: -60% }

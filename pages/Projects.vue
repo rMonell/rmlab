@@ -1,15 +1,13 @@
 <template>
-  <div class="flex flex-col items-center z-10 w-full">
-    <div class="align-center container">
-      <MagicTitle
-        :value="title"
-        tag="h1"
-        class="text-4xl font-bold uppercase mb-xl"
-        from="bottom"
-        to="initialY"
-      />
-      <ProjectList v-if="items" :items="items" />
-    </div>
+  <div class="container w-full align-center">
+    <MagicTitle
+      :value="title"
+      tag="h1"
+      class="text-4xl font-bold uppercase mb-xl md:text-left text-center"
+      from="bottom"
+      to="initialY"
+    />
+    <ProjectList v-if="items" :items="items" />
   </div>
 </template>
 

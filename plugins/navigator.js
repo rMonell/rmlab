@@ -9,6 +9,9 @@ Vue.prototype.$Navigator = function (store, router) {
     this.isPlayingTimeline = false
 
     this.routePusher = (route, index) => {
+        document.querySelector('section#app-section').classList.remove('duration-300')
+        document.querySelector('section#app-section').removeAttribute('style')
+
         store.commit('section/set', index)
         router.push(route)
     }
@@ -35,6 +38,8 @@ Vue.prototype.$Navigator = function (store, router) {
     } 
 
     this.next = (store) => {
+        console.log(this.isPlayingTimeline)
+
         if (!this.isPlayingTimeline) {
             const index = store.state.section.index + 1
 

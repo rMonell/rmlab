@@ -4,6 +4,10 @@
 @tailwind components; 
 @tailwind utilities;
 
+.mix-difference {
+  mix-blend-mode: difference;
+}
+
 .pin-c-x {
     left: 50%;
     transform: translateX(-50%);

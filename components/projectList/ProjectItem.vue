@@ -1,6 +1,6 @@
 <template>
   <article class="flex justify-center md:items-stretch relative">
-    <div class="flex flex-col justify-center items-start w-3/5 md:w-2/5 z-10" ref="projectContent">
+    <div class="flex flex-col justify-center items-start w-4/5 sm:w-3/5 md:w-2/5 z-10" ref="projectContent">
       <div>
         <h1 class="md:text-5xl text-3xl font-bold leading-tight uppercase mb-md">{{ item.fields.name }}</h1>
         <div class="mb-lg flex">
@@ -24,7 +24,7 @@
       <div class="mb-lg text-sm md:text-base" v-html="getProjectPreview(item.fields.body)" />
       <app-button tag="a" :onClick="handleClick" :href="`/projects/${item.fields.slug}`">En savoir plus</app-button>
     </div>
-    <div class="absolute pin-c h-64 flex items-center w-4/5">
+    <div class="absolute pin-c h-64 flex items-center w-11/12 md:w-4/5">
       <div
         class="absolute bottom-0 h-full bg-cover bg-center bg-no-repeat w-full opacity-25"
         :style="`background-image: url(${item.fields.mainPicture.fields.file.url})`"

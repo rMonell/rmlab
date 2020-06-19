@@ -1,8 +1,9 @@
 <template>
     <div v-if="item" class="w-full z-back">
       <div class="container p-lg md:p-xl mt-2xl">
-        <div class="flex items-center mb-lg">
-          <span class="text-base font-normal mr-sm">Retour</span>
+        <div class="flex items-center mb-lg cursor-pointer" @click="handleClick">
+          <arrow class="transform rotate-180" />
+          <span class="text-base font-normal ml-sm">Retour</span>
         </div>
           <magic-title
               :value="item.name"
@@ -30,14 +31,14 @@
           </div>
           <div v-html="item.body" ref="projectBody" />
         </div>
-        <div class="bg-current p-lg md:p-xl flex flex-col md:flex-row">
+        <div class="bg-current p-lg md:p-xl flex flex-col md:flex-row" ref="imagesGrid">
           <div class="w-full mr-lg">
             <img
               class="w-full mb-lg last:mb-0"
               v-for="(image, key) in item.imagesGrid.slice(0, item.imagesGrid.length / 2)"
               :key="key"
               :src="image.fields.file.url"
-              ref="projectGridColLeft"
+              ref="gridItemLeft"
             />
           </div>
           <div class="w-full mt-lg md:mt-2xl">
@@ -46,7 +47,7 @@
               v-for="(image, key) in item.imagesGrid.slice(item.imagesGrid.length / 2, item.imagesGrid.length)"
               :key="key"
               :src="image.fields.file.url"
-              ref="projectGridColRight"
+              ref="gridItemRight"
             />
           </div>
         </div>
@@ -60,12 +61,19 @@ import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 import { TimelineLite, Expo } from 'gsap'
 
 import MagicTitle from '~/components/global/super/MagicTitle.vue'
+import Arrow from "~/components/global/super/Arrow";
 
 const client = createClient();
 
 export default {
   components: {
-    'magic-title': MagicTitle
+    'magic-title': MagicTitle,
+    'arrow': Arrow
+  },
+  data() {
+    return {
+      navigator: new this.$Navigator(this.$store, this.$router)
+    }
   },
   asyncComputed: {
     item() {
@@ -91,13 +99,23 @@ export default {
         .catch(console.error);
     }
   },
-  mounted() {
-    const timeline = new TimelineLite();
-    const easing = Expo.easeInOut;
+  watch: {
+    item() {
+      const timeline = new TimelineLite();
+      const easing = Expo.easeInOut;
 
-    console.log(this.$refs["projectPicture"])
-
-    timeline.from(this.$refs.projectPicture, { width: 0, ease: easing })
+      this.$nextTick(() => {
+        timeline.fromTo(this.$refs['projectPicture'], 1.5, { width: '0%' }, { width: '100%', ease: easing })
+        timeline.from(this.$refs['projectInfos'], 1.5, { y: '100%', ease: easing }, '-=1.25')
+        timeline.from(this.$refs['projectBody'], 1.5, { x: 100, alpha: 0, ease: easing }, '-=1.15')
+      });
+    },
+  },
+  methods: {
+    handleClick(event) {
+        event.preventDefault()
+        this.navigator.set('/projects')
+    }
   }
 };
 </script>

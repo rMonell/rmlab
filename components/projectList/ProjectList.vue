@@ -7,13 +7,13 @@
     </div>
     <div class="overflow-hidden">
       <div class="flex flex-row justify-between w-full" ref="carrouselNavContainer">
-        <project-list-navigation action="prev" :index="index" @index-change="goToItem" />
+        <arrow class="transform rotate-180" :onClick="() => goToItem(index - 1)" />
         <div class="flex flex-row items-center text-sm">
           <span>{{ index + 1 }}</span>
           <span class="mx-sm">/</span>
           <span>{{ items.length }}</span>
         </div>
-        <project-list-navigation action="next" :index="index" @index-change="goToItem" />
+        <arrow :onClick="() => goToItem(index + 1)" />
       </div>
     </div>
   </div>
@@ -24,12 +24,12 @@
 import { TimelineLite, Expo } from "gsap";
 
 import ProjectItem from "./ProjectItem";
-import ProjectListNavigation from "./ProjectListNavigation";
+import Arrow from "../global/super/Arrow";
 
 export default {
   components: {
     "project-item": ProjectItem,
-    "project-list-navigation": ProjectListNavigation
+    'arrow': Arrow
   },
   props: {
     items: {

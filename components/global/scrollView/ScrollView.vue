@@ -1,5 +1,6 @@
 <template>
   <section
+    id="app-section"
     :class="sectionClassName"
     @wheel="handleScroll"
     v-touch:swipe.top="() => !this.$route.params.slug && navigator.prev(this.$store)"
@@ -7,8 +8,6 @@
     ref="section"
   >
     <slot />
-
-    <div ref="overlay" id="app-overlay" class="overlay" />
   </section>
 </template>
 
@@ -54,14 +53,3 @@ export default {
   }
 };
 </script>
-
-<style scoped>
-.overlay {
-  position: absolute;
-  left: 0;
-  width: 100%;
-  height: 0%;
-  background-color: currentColor;
-  z-index: 500;
-}
-</style>

@@ -38,7 +38,7 @@ export default {
   */
   plugins: [
     '~/plugins/navigator.js',
-    '~/plugins/vueAsyncComputed.js'
+    '~/plugins/vue-async-computed.js',
   ],
   /*
   ** Nuxt.js dev-modules
