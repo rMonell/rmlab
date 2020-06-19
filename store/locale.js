@@ -14,12 +14,12 @@ export const state = () => ({
             'fr-FR': {
                 title: 'Accueil',
                 specialization: 'Développeur Front-end',
-                scrollIndication: 'Scrollez pour naviguer'
+                scrollIndication: 'Scollez vers le bas'
             },
             'en-US': {
                 title: 'Home',
                 specialization: 'Front-end Developper',
-                scrollIndication: 'Scroll to navigate'
+                scrollIndication: 'Scroll down'
             }
         },
         about: {
@@ -33,7 +33,7 @@ export const state = () => ({
         projects: {
             'fr-FR': {
                 title: 'Mes projets',
-                role: 'Role',
+                role: 'Rôle',
                 year: 'Année'
             },
             'en-US': {

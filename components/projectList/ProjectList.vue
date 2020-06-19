@@ -1,6 +1,6 @@
 <template>
   <div class="w-full">
-    <div class="overflow-hidden w-full mb-xl -ml-lg" ref="carrouselContainer">
+    <div class="overflow-hidden w-full mb-xl" ref="carrouselContainer">
       <div ref="carrouselInner" class="flex flex-row transition-transform duration-700 ease-expo">
         <project-item v-for="(item, key) in items" :key="key" :item="item" />
       </div>

@@ -18,6 +18,12 @@ module.exports = {
                 xl: '40px',
                 '2xl': '80px',
             },
+            height: theme => ({
+                "screen/2": "50vh",
+                "screen/3": "calc(100vh / 3)",
+                "screen/4": "calc(100vh / 4)",
+                "screen/5": "calc(100vh / 5)",
+            }),
             transitionTimingFunction: {
                 'expo': 'cubic-bezier(0.9, 0.01, 0.2, 1)',
                 'out-min': 'cubic-bezier(0, 0, 0.7, 1)'

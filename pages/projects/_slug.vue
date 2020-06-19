@@ -30,7 +30,7 @@
             </div>
           </div>
           <div
-              class="w-full h-64 bg-cover bg-center bg-no-repeat mb-xl"
+              class="w-full h-64 bg-gray-700 bg-cover bg-center bg-no-repeat mb-xl"
               :style="`background-image: url(${item.mainPicture.fields.file.url}); height: 30vw; min-height: 200px;`"
               ref="projectPicture"
           />
@@ -39,7 +39,7 @@
         <div class="bg-current p-lg md:p-xl flex flex-col md:flex-row" ref="imagesGrid">
           <div class="w-full mr-lg">
             <img
-              class="w-full mb-lg last:mb-0"
+              class="w-full mb-lg last:mb-0 bg-gray-700 shadow-md"
               v-for="(image, key) in item.imagesGrid.slice(0, item.imagesGrid.length / 2)"
               :key="key"
               :src="image.fields.file.url"
@@ -48,7 +48,7 @@
           </div>
           <div class="w-full mt-lg md:mt-2xl">
             <img
-              class="w-full mb-lg last:mb-0"
+              class="w-full mb-lg last:mb-0 bg-gray-700 shadow-md"
               v-for="(image, key) in item.imagesGrid.slice(item.imagesGrid.length / 2, item.imagesGrid.length)"
               :key="key"
               :src="image.fields.file.url"
