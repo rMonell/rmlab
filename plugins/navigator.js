@@ -29,17 +29,22 @@ Vue.prototype.$Navigator = function (store, router) {
         overlay.style[direction] = 'initial'
         
         timeline.to(overlay, .75, { height: '100%',  ease: easing, onComplete: () => this.routePusher(route, index) })
-        timeline.to(overlay, .75, { height: '0', [direction]: 0, [oppositeDirection]: 'initial', ease: easing, onComplete: () =>  this.isPlayingTimeline = false })
+        timeline.to(overlay, .75, { height: '0', [direction]: 0, [oppositeDirection]: 'initial', ease: easing, onComplete: () => this.onComplete() }, '+=.25')
+    }
+    
+    this.onComplete = () => {
+        this.isPlayingTimeline = false
+        store.commit('section/toggleSectionChanged')
     }
 
     this.playTimeline = (direction, route) => {
+        store.commit('section/setSectionChanged', false)
+
         this.timeline(direction, route)
         this.isPlayingTimeline = true
     } 
 
     this.next = (store) => {
-        console.log(this.isPlayingTimeline)
-
         if (!this.isPlayingTimeline) {
             const index = store.state.section.index + 1
 

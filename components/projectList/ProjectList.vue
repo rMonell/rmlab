@@ -10,7 +10,7 @@
         <arrow class="transform rotate-180 hover:-translate-x-2 duration-300 ease-out" :onClick="() => goToItem(index - 1)" />
         <div class="flex flex-row items-center text-sm">
           <span>{{ index + 1 }}</span>
-          <span class="mx-sm border-b w-3" />
+          <span class="mx-sm border-b border-current w-3" />
           <span>{{ items.length }}</span>
         </div>
         <arrow class="transform hover:translate-x-2 duration-300 ease-out" :onClick="() => goToItem(index + 1)" />

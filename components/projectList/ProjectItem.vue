@@ -2,14 +2,14 @@
   <article class="flex justify-center items-center relative w-full">
   <div class="relative h-screen/2 flex items-center w-11/12 md:w-2/5 -ml-lg">
       <div
-        class="absolute bottom-0 h-full bg-gray-700 bg-cover bg-center bg-no-repeat w-full"
+        class="absolute bottom-0 h-0 bg-gray-700 bg-cover bg-center bg-no-repeat w-full"
         :style="`background-image: url(${item.fields.mainPicture.fields.file.url})`"
         ref="projectImage"
       />
     </div>
     <div class="flex flex-col justify-center items-start w-4/5 sm:w-3/5 md:w-2/5 z-10 -ml-lg" ref="projectContent">
       <div>
-        <h1 class="md:text-6xl text-3xl font-bold leading-tight uppercase mb-md">{{ item.fields.name }}</h1>
+        <h1 class="text-5xl md:text-6xl text-3xl font-bold leading-tight uppercase mb-md text-shadow">{{ item.fields.name }}</h1>
         <div class="mb-lg ml-xl flex">
           <div class="mr-lg">
             <h2 class="font-bold text-base">{{ role }}</h2>

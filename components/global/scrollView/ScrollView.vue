@@ -7,7 +7,9 @@
     v-touch:swipe.bottom="() => !this.$route.params.slug && navigator.next(this.$store)"
     ref="section"
   >
-    <slot />
+
+      <slot v-if="canRenderSlot" />
+
   </section>
 </template>
 
@@ -20,17 +22,28 @@ export default {
   data() {
     return {
       navigator: new this.$Navigator(this.$store, this.$router),
-      y: 0
+      y: 0,
+      canRenderSlot: true
     };
   },
   computed: {
+    route() {
+      return this.$route
+    },
     sectionClassName() {
       return `w-full flex flex-row justify-center items-center relative transition-transform duration-300 ease-out-min z-back ${!this
         .$route.params.slug && "h-screen p-lg md:p-xl"}`;
     }
   },
+  watch: {
+    route() {
+      this.canRenderSlot = false
+      setTimeout(() => this.canRenderSlot = true, 750);
+    }
+  },
   methods: {
     handleScroll(event) {
+
       if (!this.$route.params.slug) {
         event.deltaY > 0
           ? this.navigator.next(this.$store)
