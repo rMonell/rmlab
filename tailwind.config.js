@@ -4,17 +4,9 @@ module.exports = {
     important: false,
     separator: ':',
     purge: [
-        './pages/**/*.html',
-        './pages/**/*.vue',
-        './pages/**/*.jsx',
-
-        './components/**/*.html',
-        './components/**/*.vue',
-        './components/**/*.jsx',
-
-        './layout/**/*.html',
-        './layout/**/*.vue',
-        './layout/**/*.jsx',
+        "./components/**/*.vue", 
+        "./layout/**/*.vue", 
+        "./pages/**/*.vue", 
     ],
     theme: {
         fontFamily: {

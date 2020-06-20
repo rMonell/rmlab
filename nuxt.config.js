@@ -56,6 +56,16 @@ export default {
     '@nuxtjs/dotenv',
     'nuxt-purgecss'
   ],
+  purgeCSS: {
+    mode: 'postcss',
+    enabled: (process.env.NODE_ENV === 'production'),
+    content: [
+      'components/**/*.vue',
+      'layouts/**/*.vue',
+      'pages/**/*.vue',
+      'nuxt.config.js'
+    ]
+  },
   /*
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options
