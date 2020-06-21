@@ -22,9 +22,9 @@
 
 
 <script>
-import { gsap } from "gsap/dist/gsap";
+import { gsap } from "gsap/dist/gsap"
 
-import NetButton from "../global/elements/NetButton";
+import NetButton from "~/components/global/NetButton"
 
 export default {
   components: {

@@ -30,9 +30,9 @@
 <script>
 import { gsap } from "gsap/dist/gsap";
 
-import Linkedin from "~/components/vectors/Linkedin";
-import Mail from "~/components/vectors/Mail";
-import MagicTitle from "~/components/global/super/MagicTitle";
+import Linkedin from "~/components/pages/contact/Linkedin";
+import Mail from "~/components/pages/contact/Mail";
+import MagicTitle from "~/components/global/MagicTitle";
 
 export default {
   components: {

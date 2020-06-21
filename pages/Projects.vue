@@ -14,8 +14,8 @@
 <script>
 import { createClient } from "~/plugins/contentful.js";
 
-import MagicTitle from "~/components/global/super/MagicTitle.vue";
-import ProjectList from "~/components/projectList/ProjectList.vue";
+import MagicTitle from "~/components/global/MagicTitle.vue";
+import ProjectList from "~/components/pages/projects/projectList/ProjectList.vue";
 
 const client = createClient();
 

@@ -17,7 +17,7 @@ import { createClient } from "~/plugins/contentful.js";
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 import { gsap } from "gsap/dist/gsap";
 
-import MagicTitle from "~/components/global/super/MagicTitle.vue";
+import MagicTitle from "~/components/global/MagicTitle.vue";
 
 const client = createClient();
 

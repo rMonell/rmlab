@@ -38,7 +38,7 @@
 import { gsap } from "gsap/dist/gsap";
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 
-import AppButton from "../global/elements/AppButton";
+import AppButton from "~/components/global/AppButton";
 
 export default {
   components: {

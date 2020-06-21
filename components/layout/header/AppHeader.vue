@@ -1,17 +1,18 @@
 <template>
     <header class="fixed top-0 left-0 flex flex-row justify-between items-center w-full p-lg md:p-xl z-40 mix-difference pointer-events-none">
-        <Logo />
-        <Burger />
+        <logo />
+        <burger />
     </header>
 </template>
 
 <script>
-import Logo from '~/components/global/header/Logo.vue'
-import Burger from '~/components/global/header/Burger.vue'
+import Logo from './Logo'
+import Burger from './Burger'
 
 export default {
   components: {
-    Logo, Burger
+    'logo': Logo,
+    'burger': Burger
   },
 }
 </script>

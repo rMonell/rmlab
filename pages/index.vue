@@ -42,7 +42,7 @@
 import { gsap } from "gsap/dist/gsap";
 import { Fragment } from 'vue-fragment'
 
-import MagicTitle from '~/components/global/super/MagicTitle.vue'
+import MagicTitle from '~/components/global/MagicTitle.vue'
 
 export default {
     components: {

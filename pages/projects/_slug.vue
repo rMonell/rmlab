@@ -69,8 +69,8 @@ import { BLOCKS, INLINES } from '@contentful/rich-text-types';
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 import { gsap } from "gsap/dist/gsap";
 
-import MagicTitle from '~/components/global/super/MagicTitle.vue'
-import NetButton from "~/components/global/elements/NetButton";
+import MagicTitle from '~/components/global/MagicTitle.vue'
+import NetButton from "~/components/global/NetButton";
 
 const client = createClient();
 
