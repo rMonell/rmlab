@@ -1,8 +1,8 @@
 <template>
-    <Fragment>
+    <fragment>
         <div class="flex flex-col items-center z-10">
             <div class="text-center">
-                <MagicTitle
+                <magic-title
                     value="Renaud Monell"
                     tag="h1"
                     className="font-bold md:text-6xl text-3xl uppercase"
@@ -10,7 +10,7 @@
                     from="bottom"
                     to="initialY"
                 />
-                <MagicTitle
+                <magic-title
                     :value="specialization"
                     tag="h2"
                     className="text-xl font-normal"
@@ -25,7 +25,7 @@
                     ref="fill"
                     class="fill"
                 />
-                <MagicTitle
+                <magic-title
                     :value="scrollIndication"
                     tag="span"
                     className="text-sm mt-sm"
@@ -35,20 +35,19 @@
                 />
             </div>
         </div>
-        <HeroScene />
-    </Fragment>
+    </fragment>
 </template>
 
 <script>
 import MagicTitle from '~/components/global/super/MagicTitle.vue'
-import HeroScene from '~/components/scenes/HeroScene.vue'
 
 import { TimelineLite, Expo } from 'gsap'
 import { Fragment } from 'vue-fragment'
 
 export default {
     components: {
-        MagicTitle, Fragment, HeroScene
+        'magic-title': MagicTitle,
+        'fragment': Fragment
     },
 
     computed: {

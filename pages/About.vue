@@ -1,6 +1,6 @@
 <template>
   <div class="text-center m:mw-50 md:text-left mx-auto container">
-    <MagicTitle
+    <magic-title
       :value="title"
       tag="h1"
       class="text-4xl font-bold uppercase mb-xl"
@@ -23,7 +23,7 @@ const client = createClient();
 
 export default {
   components: {
-    MagicTitle
+    'magic-title': MagicTitle
   },
 
   computed: {

@@ -55,12 +55,12 @@ export default {
 
             clearInterval(this.interval)
 
-            timeline.to(mainProgress, 1.2, {y: '100%', ease: easing })
+            timeline.to(mainProgress, 1.2, { y: '100%', ease: easing })
 
             timeline.to(
                 backgroundProgress,
                 1.2,
-                {scale: 1.2, alpha: 0, ease: easing, onComplete: () => this.setLoading(true) },
+                { scale: 1.2, alpha: 0, ease: easing, onComplete: () => this.setLoading(true) },
                 '-= 1.2'
             )
         }

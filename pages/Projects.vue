@@ -1,13 +1,13 @@
 <template>
   <div class="container w-full align-center">
-    <MagicTitle
+    <magic-title
       :value="title"
       tag="h1"
       class="text-4xl font-bold uppercase mb-xl md:text-left text-center"
       from="bottom"
       to="initialY"
     />
-    <ProjectList v-if="items" :items="items" />
+    <project-list v-if="items" :items="items" />
   </div>
 </template>
 
@@ -20,8 +20,8 @@ const client = createClient();
 
 export default {
   components: {
-    MagicTitle,
-    ProjectList
+    'magic-title': MagicTitle,
+    'project-list': ProjectList
   },
   computed: {
     title() {
