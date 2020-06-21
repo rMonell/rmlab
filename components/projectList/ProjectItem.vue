@@ -35,7 +35,7 @@
 
 
 <script>
-import { TimelineLite, Expo } from "gsap";
+import { gsap } from "gsap/dist/gsap";
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 
 import AppButton from "../global/elements/AppButton";
@@ -56,21 +56,19 @@ export default {
     }
   },
   mounted() {
-    const timeline = new TimelineLite();
-    const easing = Expo.easeInOut;
+    const timeline = gsap.timeline();
+    const easing = 'Expo.easeInOut';
 
     timeline.fromTo(
       this.$refs["projectImage"],
-      2,
       { height: '0%', ease: easing },
-      { height: '100%', ease: easing },
+      { duration: 2, height: '100%', ease: easing },
     );
 
     timeline.fromTo(
       this.$refs["projectContent"],
-      1.5,
       { alpha: 0, x: -150 },
-      { alpha: 1, x: 0, ease: easing },
+      { duration: 1.5, alpha: 1, x: 0, ease: easing },
       "-=1.5"
     );
   },

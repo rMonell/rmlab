@@ -12,9 +12,10 @@
 </template>
 
 <script>
+import { createClient } from "~/plugins/contentful.js";
+
 import MagicTitle from "~/components/global/super/MagicTitle.vue";
 import ProjectList from "~/components/projectList/ProjectList.vue";
-import { createClient } from "~/plugins/contentful.js";
 
 const client = createClient();
 

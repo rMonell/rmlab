@@ -21,7 +21,7 @@
 
 
 <script>
-import { TimelineLite, Expo } from "gsap";
+import { gsap } from "gsap/dist/gsap";
 
 import ProjectItem from "./ProjectItem";
 import Arrow from "../global/super/Arrow";
@@ -77,10 +77,11 @@ export default {
   mounted() {
     this.setCarrouselInnerWidth();
 
-    const timeline = new TimelineLite();
-    const easing = Expo.easeInOut;
+    const timeline = gsap.timeline();
+    const easing = 'Expo.easeInOut';
 
-    timeline.from(this.$refs["carrouselNavContainer"], 1.5, {
+    timeline.from(this.$refs["carrouselNavContainer"], {
+      duration: 1.5,
       y: "100%",
       ease: easing
     });

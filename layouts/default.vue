@@ -1,6 +1,6 @@
 <template>
   <fragment>
-    <main :class="`overflow-hidden w-full z-0 relative h-screen ${themeClassName}`" v-if="loading">
+    <main :class="`overflow-hidden w-full z-10 relative h-screen ${themeClassName}`" v-if="loading">
       <app-header />
       <app-menu />
       <app-footer />
@@ -9,7 +9,7 @@
         <nuxt />
       </scroll-view>
     </main>
-    <main :class="`overflow-hidden w-full h-screen z-0 relative ${themeClassName}`" v-else>
+    <main :class="`overflow-hidden w-full h-screen z-10 relative ${themeClassName}`" v-else>
       <splash :setLoading="setLoading" />
     </main>
   </fragment>

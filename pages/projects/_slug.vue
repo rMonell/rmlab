@@ -63,7 +63,7 @@
 import { createClient } from "~/plugins/contentful.js";
 import { BLOCKS, INLINES } from '@contentful/rich-text-types';
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
-import { TimelineLite, Expo } from 'gsap'
+import { gsap } from "gsap/dist/gsap";
 
 import MagicTitle from '~/components/global/super/MagicTitle.vue'
 import BackButton from "~/components/global/elements/BackButton";
@@ -109,13 +109,13 @@ export default {
   },
   watch: {
     item() {
-      const timeline = new TimelineLite();
-      const easing = Expo.easeInOut;
+      const timeline = gsap.timeline();
+      const easing = 'Expo.easeInOut';
 
       this.$nextTick(() => {
-        timeline.fromTo(this.$refs['projectPicture'], 1.5, { width: '0%' }, { width: '100%', ease: easing })
-        timeline.from(this.$refs['projectInfos'], 1.5, { y: '100%', ease: easing }, '-=1.25')
-        timeline.from(this.$refs['projectBody'], 1.5, { x: 100, alpha: 0, ease: easing }, '-=1.15')
+        timeline.fromTo(this.$refs['projectPicture'], { width: '0%' }, { duration: 1.5, width: '100%', ease: easing })
+        timeline.from(this.$refs['projectInfos'], { duration: 1.5, y: '100%', ease: easing }, '-=1.25')
+        timeline.from(this.$refs['projectBody'], { duration: 1.5, x: 100, alpha: 0, ease: easing }, '-=1.15')
       });
     },
   }

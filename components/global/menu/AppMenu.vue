@@ -13,12 +13,12 @@
 </template>
 
 <script>
-import { TimelineLite, Expo } from 'gsap'
+import { gsap } from "gsap/dist/gsap";
 
 export default {
     data () {
         return {
-            timeline: new TimelineLite({ paused: true }) 
+            timeline: gsap.timeline({ paused: true }) 
         }
     },
 
@@ -52,16 +52,14 @@ export default {
 
     mounted() {
         const { container, item } = this.$refs
-        const easing = Expo.easeInOut
+        const easing = 'Expo.easeInOut'
 
-        this.timeline.fromTo(container, 1, { height: '0vh',  ease: easing }, { height: '100vh',  ease: easing })
+        this.timeline.fromTo(container, { height: '0vh',  ease: easing }, { duration: 1, height: '100vh',  ease: easing })
 
-        this.timeline.staggerFromTo(
+        this.timeline.fromTo(
             item,
-            .75,
-            {y: -25, alpha: 0, ease: easing},
-            {y: 0, alpha: 1, ease: easing, onComplete: () => this.isAnimating = false},
-            .15,
+            { y: -25, alpha: 0, ease: easing },
+            { duration: .75, y: 0, alpha: 1, ease: easing, stagger: .15, onComplete: () => this.isAnimating = false },
             '-=.25'
         )
     },

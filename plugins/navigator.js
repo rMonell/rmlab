@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import { TimelineLite, Expo } from 'gsap'
+import { gsap } from "gsap/dist/gsap";
 
 Vue.prototype.$Navigator = function (store, router) {
     this.store = store
@@ -18,8 +18,8 @@ Vue.prototype.$Navigator = function (store, router) {
 
     this.timeline = (direction, route) => {
         const overlay = document.querySelector('#app-overlay')
-        const timeline = new TimelineLite() 
-        const easing = Expo.easeInOut
+        const timeline = gsap.timeline() 
+        const easing = 'Expo.easeInOut'
 
         const index = this.tree.indexOf(route)
 
@@ -28,8 +28,8 @@ Vue.prototype.$Navigator = function (store, router) {
         overlay.style[oppositeDirection] = 0
         overlay.style[direction] = 'initial'
         
-        timeline.to(overlay, .75, { height: '100%',  ease: easing, onComplete: () => this.routePusher(route, index) })
-        timeline.to(overlay, .75, { height: '0', [direction]: 0, [oppositeDirection]: 'initial', ease: easing, onComplete: () => this.onComplete() }, '+=.25')
+        timeline.to(overlay, { duration: .75, height: '100%',  ease: easing, onComplete: () => this.routePusher(route, index) })
+        timeline.to(overlay, { duration: .75, height: '0', [direction]: 0, [oppositeDirection]: 'initial', ease: easing, onComplete: () => this.onComplete() }, '+=.25')
     }
     
     this.onComplete = () => {

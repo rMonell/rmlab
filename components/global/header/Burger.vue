@@ -14,12 +14,12 @@
 </template>
 
 <script>
-import { TimelineLite, Expo } from 'gsap'
+import { gsap } from "gsap/dist/gsap";
 
     export default {
         data() {
             return {
-                timeline: new TimelineLite({ paused: true })
+                timeline: gsap.timeline({ paused: true })
             }
         },
         
@@ -31,27 +31,26 @@ import { TimelineLite, Expo } from 'gsap'
 
         mounted() {
             const { slice, close, svg } = this.$refs
-            const easing = Expo.easeInOut
+            const easing = 'Expo.easeInOut'
 
-            this.timeline.staggerTo(slice, .4, {scaleX: 0, ease: easing}, .1)
-            this.timeline.staggerTo(close, .5, {width: 16, ease: easing}, .1, '+=.25')
+            this.timeline.to(slice, { duration: .4, scaleX: 0, ease: easing, stagger: .1 })
+            this.timeline.to(close, { duration: .5, width: 16, ease: easing, stagger: .1 }, '+=.25')
 
-            const mountTimeline = new TimelineLite()
+            const mountTimeline = gsap.timeline()
 
             mountTimeline.addLabel('start');
 
-            mountTimeline.to(svg, 1.5, { strokeDashoffset: 0, ease: easing }, 'start')
+            mountTimeline.to(svg, { duration: 1.5, strokeDashoffset: 0, ease: easing }, 'start')
 
             mountTimeline.fromTo(
                 slice,
-                .75,
                 { x: '-50%', y: 0, ease: easing },
-                { width: 16, ease: easing },
+                { duration: .75, width: 16, ease: easing },
                 'start+=.75'
             )
 
-            mountTimeline.to(slice[0], 1, { y: -7, ease: easing }, 'start+=.5')
-            mountTimeline.to(slice[2], 1, { y: 7, ease: easing }, 'start+=.5')
+            mountTimeline.to(slice[0], { duration: 1, y: -7, ease: easing }, 'start+=.5')
+            mountTimeline.to(slice[2], { duration: 1, y: 7, ease: easing }, 'start+=.5')
         },
 
         methods: {

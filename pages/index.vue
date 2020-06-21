@@ -39,10 +39,10 @@
 </template>
 
 <script>
-import MagicTitle from '~/components/global/super/MagicTitle.vue'
-
-import { TimelineLite, Expo } from 'gsap'
+import { gsap } from "gsap/dist/gsap";
 import { Fragment } from 'vue-fragment'
+
+import MagicTitle from '~/components/global/super/MagicTitle.vue'
 
 export default {
     components: {
@@ -61,14 +61,13 @@ export default {
 
     mounted() {
         const { fill } = this.$refs
-        const timeline = new TimelineLite() 
-        const easing = Expo.easeInOut
+        const timeline = gsap.timeline() 
+        const easing = 'Expo.easeInOut'
 
         timeline.fromTo(
             fill,
-            .75,
             { height: 0, ease: easing },
-            { height: 60, ease: easing },
+            { duration: .75, height: 60, ease: easing },
         )
     }
 }

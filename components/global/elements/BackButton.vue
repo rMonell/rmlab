@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import { TimelineLite, Expo } from "gsap";
+import { gsap } from "gsap/dist/gsap";
 import Arrow from "~/components/global/super/Arrow";
 
 export default {
@@ -32,10 +32,10 @@ export default {
     }
   },
   mounted() {
-    const timeline = new TimelineLite();
-    const easing = Expo.easeInOut;
+    const timeline = gsap.timeline();
+    const easing = 'Expo.easeInOut';
 
-    timeline.from(this.$refs["arrow"], 1.5, { y: "100%", ease: easing });
+    timeline.from(this.$refs["arrow"], { duration: 1.5, y: "100%", ease: easing });
   }
 };
 </script>

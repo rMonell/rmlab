@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import { TimelineLite, Expo } from 'gsap'
+import { gsap } from "gsap/dist/gsap";
 
 export default {
     props: {
@@ -72,17 +72,16 @@ export default {
 
     mounted() {
         const { title } = this.$refs
-        const timeline = new TimelineLite() 
-        const easing = Expo.easeInOut
+        const timeline = gsap.timeline() 
+        const easing = 'Expo.easeInOut'
 
         const duration = this.duration === undefined ? 1.5 : this.duration
         const delay = this.delay === undefined ? 0 : this.delay
         
         timeline.fromTo(
             title,
-            duration,
             { [this.directions[this.from].axis]: [this.directions[this.from].value], ease: easing },
-            { [this.directions[this.to].axis]: [this.directions[this.to].value], ease: easing },
+            { duration: duration, [this.directions[this.to].axis]: [this.directions[this.to].value], ease: easing },
             delay
         )
     }

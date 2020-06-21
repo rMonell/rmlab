@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import { TimelineLite, Expo } from 'gsap'
+import { gsap } from "gsap/dist/gsap";
 
 export default {
     props: {
@@ -28,21 +28,19 @@ export default {
     },
 
     mounted() {
-        const loadingTimelone = new TimelineLite({ paused: true })
-        const easing = Expo.easeOut
+        const loadingTimeline = gsap.timeline({ paused: true })
+        const easing = 'Expo.easeOut'
 
-        setTimeout(() => loadingTimelone.play(), 250)
+        setTimeout(() => loadingTimeline.play(), 250)
 
-        loadingTimelone.to(
+        loadingTimeline.to(
             this.progress,
-            2.5,
-            {value: 100, roundProps: 'value', ease: easing, onComplete: () => this.complete()}
+            { duration: 2.5, value: 100, roundProps: 'value', ease: easing, onComplete: () => this.complete() }
         )
 
-        loadingTimelone.to(
+        loadingTimeline.to(
             this.$refs["progressOverlay"],
-            2.5,
-            {height: '0%'},
+            { duration: 2.5, height: '0%' },
             '-=2.5'
         )
     },
@@ -50,17 +48,16 @@ export default {
     methods: {
         complete() {
             const { mainProgress, backgroundProgress } = this.$refs
-            const timeline = new TimelineLite() 
-            const easing = Expo.easeInOut
+            const timeline = gsap.timeline() 
+            const easing = 'Expo.easeInOut'
 
             clearInterval(this.interval)
 
-            timeline.to(mainProgress, 1.2, { y: '100%', ease: easing })
+            timeline.to(mainProgress, { duration: 1.2, y: '100%', ease: easing })
 
             timeline.to(
                 backgroundProgress,
-                1.2,
-                { scale: 1.2, alpha: 0, ease: easing, onComplete: () => this.setLoading(true) },
+                { duration: 1.2, scale: 1.2, alpha: 0, ease: easing, onComplete: () => this.setLoading(true) },
                 '-= 1.2'
             )
         }

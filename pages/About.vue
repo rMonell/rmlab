@@ -15,8 +15,8 @@
 import { BLOCKS, INLINES } from '@contentful/rich-text-types';
 import { createClient } from "~/plugins/contentful.js";
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
+import { gsap } from "gsap/dist/gsap";
 
-import { TimelineLite, Expo } from "gsap";
 import MagicTitle from "~/components/global/super/MagicTitle.vue";
 
 const client = createClient();
@@ -51,15 +51,13 @@ export default {
 
   mounted() {
     const { para } = this.$refs;
-    const timeline = new TimelineLite();
-    const easing = Expo.easeInOut;
+    const timeline = gsap.timeline();
+    const easing = 'Expo.easeInOut';
 
-    timeline.staggerFromTo(
+    timeline.fromTo(
       para,
-      1.5,
       { x: 200, alpha: 0, ease: easing },
-      { x: 0, alpha: 1, ease: easing },
-      0.25
+      { duration: 1.5, x: 0, alpha: 1, ease: easing, stagger: .25 }
     );
   }
 };

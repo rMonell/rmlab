@@ -22,7 +22,7 @@
 </style>
 
 <script>
-import { TimelineLite, Expo } from 'gsap'
+import { gsap } from "gsap/dist/gsap";
 
 export default {
     data() {
@@ -32,14 +32,13 @@ export default {
     },
 
      mounted() {
-        const timeline = new TimelineLite() 
-        const easing = Expo.easeInOut
+        const timeline = gsap.timeline() 
+        const easing = 'Expo.easeInOut'
 
         timeline.fromTo(
             '.logo > svg',
-            1.5,
             { y: '100%', ease: easing },
-            { y: '0%', ease: easing },
+            { duration: 1.5, y: '0%', ease: easing },
         )
     },
 

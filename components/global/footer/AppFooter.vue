@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import { TimelineLite, Expo } from 'gsap'
+import { gsap } from "gsap/dist/gsap";
 
 export default {
     computed: {
@@ -39,10 +39,10 @@ export default {
         }
     },
     mounted() {
-        const timeline = new TimelineLite();
-        const easing = Expo.easeInOut;
+        const timeline = gsap.timeline();
+        const easing = 'Expo.easeInOut';
 
-        timeline.from(this.$refs["footerInner"], 1.5, { y: "100%", ease: easing });
+        timeline.from(this.$refs["footerInner"], { duration: 1.5, y: "100%", ease: easing });
     }
 }
 </script>
