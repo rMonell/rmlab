@@ -16,7 +16,7 @@
             <div class="flex">
               <div v-for="(role, key) in item.fields.role" :key="key">
                 <span class="text-sm">{{ role.fields.name }}</span>
-                <span class="mx-sm text-sm" v-if="key != item.fields.role.length - 1">-</span>
+                <span class="mx-md text-sm" v-if="key != item.fields.role.length - 1">-</span>
               </div>
             </div>
           </div>

@@ -1,5 +1,5 @@
 <template>
-  <div class="logo overflow-hidden flex flex-row justify-center items-center">
+  <div class="logo overflow-hidden flex flex-row justify-center items-center pointer-events-auto">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 39.68 43.72" class="w-full cursor-pointer text-white" @click="handleClick">
       <g>
           <g>

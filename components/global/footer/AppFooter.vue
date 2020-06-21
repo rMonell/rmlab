@@ -1,11 +1,11 @@
 <template>
-    <footer class="fixed bottom-0 left-0 w-full my-lg px-lg md:my-xl md:px-xl z-40 overflow-hidden mix-difference text-white">
+    <footer class="fixed bottom-0 left-0 w-full my-lg px-lg md:my-xl md:px-xl z-40 overflow-hidden mix-difference text-white pointer-events-none">
         <div class="flex flex-row justify-between items-center w-full" ref="footerInner">
             <span
-                class="text-xs cursor-pointer"
+                class="text-xs cursor-pointer pointer-events-auto"
                 @click="setStore('locale', locale.value)"
             > {{ locale.text }}</span>
-            <div class="flex">
+            <div class="flex pointer-events-auto">
                 <span
                     class="rounded-full w-4 h-4 border-2 border-current bg-black cursor-pointer mr-sm"
                     @click="setStore('theme', 'dark')"

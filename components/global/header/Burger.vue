@@ -1,5 +1,5 @@
 <template>
-    <button class="burger" @click="handleClick">
+    <button class="burger pointer-events-auto" @click="handleClick">
         <div class="slices">
             <span  v-for="i in 3" :key="i" ref="slice"></span>
         </div>
