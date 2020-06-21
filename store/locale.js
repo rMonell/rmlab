@@ -2,12 +2,12 @@ export const state = () => ({
     value: 'fr-FR',
 
     staticTrans: {
-        components: {
+        global: {
             'fr-FR': {
-                backButton: 'Retour',
+                goBack: 'Retour',
             },
             'en-US': {
-                backButton: 'Go back',
+                goBack: 'Go back',
             }
         },
         index: {
@@ -34,12 +34,16 @@ export const state = () => ({
             'fr-FR': {
                 title: 'Mes projets',
                 role: 'Rôle',
-                year: 'Année'
+                year: 'Année',
+                next: 'Suivant',
+                previous: 'Précedent'
             },
             'en-US': {
                 title: 'My projects',
                 role: 'Role',
-                year: 'year'
+                year: 'year',
+                next: 'Next',
+                previous: 'Previous'
             }
         },
         contact: {

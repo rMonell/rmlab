@@ -5,17 +5,11 @@
         <project-item v-for="(item, key) in items" :key="key" :item="item" />
       </div>
     </div>
-    <div class="overflow-y-hidden px-lg">
-      <div class="flex flex-row justify-between w-full" ref="carrouselNavContainer">
-        <arrow class="transform rotate-180 hover:-translate-x-2 duration-300 ease-out" :onClick="() => goToItem(index - 1)" />
-        <div class="flex flex-row items-center text-sm">
-          <span>{{ index + 1 }}</span>
-          <span class="mx-sm border-b border-current w-3" />
-          <span>{{ items.length }}</span>
-        </div>
-        <arrow class="transform hover:translate-x-2 duration-300 ease-out" :onClick="() => goToItem(index + 1)" />
-      </div>
-    </div>
+    <project-list-navigation
+      :length="items.length"
+      :index="index"
+      @index-changed="goToItem"
+    />
   </div>
 </template>
 
@@ -24,12 +18,12 @@
 import { gsap } from "gsap/dist/gsap";
 
 import ProjectItem from "./ProjectItem";
-import Arrow from "../global/super/Arrow";
+import ProjectListNavigation from './ProjectListNavigation'
 
 export default {
   components: {
     "project-item": ProjectItem,
-    'arrow': Arrow
+    'project-list-navigation': ProjectListNavigation
   },
   props: {
     items: {
@@ -63,28 +57,9 @@ export default {
       this.setCarrouselInnerTransform();
     }
   },
-  watch: {
-    index() {
-      this.setCarrouselInnerTransform();
-    }
-  },
-  created() {
-    window.addEventListener("resize", this.setCarrouselInnerProperties);
-  },
-  destroyed() {
-    window.removeEventListener("resize", this.setCarrouselInnerProperties);
-  },
-  mounted() {
-    this.setCarrouselInnerWidth();
-
-    const timeline = gsap.timeline();
-    const easing = 'Expo.easeInOut';
-
-    timeline.from(this.$refs["carrouselNavContainer"], {
-      duration: 1.5,
-      y: "100%",
-      ease: easing
-    });
-  }
+  watch: { index() { this.setCarrouselInnerTransform() } },
+  created() { window.addEventListener("resize", this.setCarrouselInnerProperties) },
+  destroyed() { window.removeEventListener("resize", this.setCarrouselInnerProperties) },
+  mounted() { this.setCarrouselInnerWidth() }
 };
 </script>
