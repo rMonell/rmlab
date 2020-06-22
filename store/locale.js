@@ -2,12 +2,12 @@ export const state = () => ({
     value: 'fr-FR',
 
     staticTrans: {
-        components: {
+        global: {
             'fr-FR': {
-                backButton: 'Retour',
+                goBack: 'Retour',
             },
             'en-US': {
-                backButton: 'Go back',
+                goBack: 'Go back',
             }
         },
         index: {
@@ -34,20 +34,36 @@ export const state = () => ({
             'fr-FR': {
                 title: 'Mes projets',
                 role: 'Rôle',
-                year: 'Année'
+                year: 'Année',
+                next: 'Suivant',
+                previous: 'Précedent'
             },
             'en-US': {
                 title: 'My projects',
                 role: 'Role',
-                year: 'year'
+                year: 'year',
+                next: 'Next',
+                previous: 'Previous'
             }
         },
         contact: {
             'fr-FR': {
                 title: 'Me contacter',
+                fullname: 'Nom complet',
+                email: 'Email',
+                message: 'Message',
+                send: 'Envoyer',
+                error: 'Tous les champs doivent être remplis',
+                success: 'Message envoyé'
             },
             'en-US': {
                 title: 'Contact me',
+                fullname: 'Full name',
+                email: 'Email',
+                message: 'Message',
+                send: 'Send',
+                error: 'All the fields are required.',
+                success: 'Message sent'
             }
         }
     }

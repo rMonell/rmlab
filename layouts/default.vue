@@ -16,12 +16,13 @@
 </template>
 
 <script>
-import AppHeader from "~/components/global/header/AppHeader.vue";
-import AppFooter from "~/components/global/footer/AppFooter.vue";
-import AppMenu from "~/components/global/menu/AppMenu.vue";
-import Splash from "~/components/splash/Splash.vue";
-import ScrollView from "~/components/global/scrollView/ScrollView.vue";
 import { Fragment } from "vue-fragment";
+
+import AppHeader from "~/components/layout/header/AppHeader.vue";
+import AppFooter from "~/components/layout/footer/AppFooter.vue";
+import AppMenu from "~/components/layout/menu/AppMenu.vue";
+import ScrollView from "~/components/layout/scrollView/ScrollView.vue";
+import Splash from "~/components/splash/Splash.vue";
 
 export default {
   components: {

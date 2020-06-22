@@ -38,6 +38,7 @@ export default {
   */
   plugins: [
     '~/plugins/navigator.js',
+    '~/plugins/vue-touch-events.js',
     '~/plugins/vue-async-computed.js',
   ],
   /*

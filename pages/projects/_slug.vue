@@ -2,7 +2,11 @@
     <div v-if="item" class="w-full z-back">
       <div class="container p-lg md:p-xl mt-2xl">
           <div  class="flex mb-lg">
-            <back-button />
+            <net-button
+              :text="goBack"
+              to="/projects"
+              pattern="n-t"
+            />
           </div>
           <magic-title
               :value="item.name"
@@ -65,15 +69,15 @@ import { BLOCKS, INLINES } from '@contentful/rich-text-types';
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 import { gsap } from "gsap/dist/gsap";
 
-import MagicTitle from '~/components/global/super/MagicTitle.vue'
-import BackButton from "~/components/global/elements/BackButton";
+import MagicTitle from '~/components/global/MagicTitle.vue'
+import NetButton from "~/components/global/NetButton";
 
 const client = createClient();
 
 export default {
   components: {
     'magic-title': MagicTitle,
-    'back-button': BackButton
+    'net-button': NetButton
   },
   asyncComputed: {
     item() {
@@ -100,6 +104,9 @@ export default {
     }
   },
   computed: {
+    goBack() {
+      return this.$store.state.locale.staticTrans.global[this.$store.state.locale.value].goBack
+    },
     role() {
       return this.$store.state.locale.staticTrans.projects[this.$store.state.locale.value].role
     },
