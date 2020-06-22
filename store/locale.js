@@ -35,6 +35,7 @@ export const state = () => ({
                 title: 'Mes projets',
                 role: 'Rôle',
                 year: 'Année',
+                more: 'Voir le projet',
                 next: 'Suivant',
                 previous: 'Précedent'
             },
@@ -42,6 +43,7 @@ export const state = () => ({
                 title: 'My projects',
                 role: 'Role',
                 year: 'year',
+                more: 'View project',
                 next: 'Next',
                 previous: 'Previous'
             }
