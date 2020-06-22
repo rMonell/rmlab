@@ -49,9 +49,21 @@ export const state = () => ({
         contact: {
             'fr-FR': {
                 title: 'Me contacter',
+                fullname: 'Nom complet',
+                email: 'Email',
+                message: 'Message',
+                send: 'Envoyer',
+                error: 'Tous les champs doivent être remplis',
+                success: 'Message envoyé'
             },
             'en-US': {
                 title: 'Contact me',
+                fullname: 'Full name',
+                email: 'Email',
+                message: 'Message',
+                send: 'Send',
+                error: 'All the fields are required.',
+                success: 'Message sent'
             }
         }
     }
