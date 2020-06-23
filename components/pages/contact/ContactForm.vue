@@ -26,9 +26,9 @@
             class="mb-xl h-24"
         />
         <app-button type="submit" class="w-full" :waiting="isWaiting" animated>{{ send }}</app-button>
-        <transition name="slide-fade">
-          <p v-if="error" class="text-base text-red-500 mt-lg">{{ errorMessage }}</p>
-          <p v-if="success" class="text-base text-green-500 mt-lg">{{ successMessage }}</p>
+        <transition name="slide-fade" mode="out-in" appear>
+          <p v-if="error" class="text-base text-red-500 mt-lg" key="error">{{ errorMessage }}</p>
+          <p v-if="success" class="text-base text-green-500 mt-lg" key="success">{{ successMessage }}</p>
         </transition>
       </form>
 </template>
@@ -93,10 +93,14 @@ export default {
       event.preventDefault()
 
       if (this.fullname === '' || this.email === '' || this.message === '') {
+        if (this.success) this.success = false
+
         this.isWaiting = false
         this.error = true
       } else {
         axios.post('https://fieldgoal.io/f/BIdlvm', null, { params: params }).then(() => {
+          if (this.error) this.error = false
+
           this.isWaiting = false
           this.success = true
         })
@@ -111,7 +115,7 @@ export default {
 .slide-fade-leave-active { transition: all .3s ease }
 
 .slide-fade-enter, .slide-fade-leave-to {
-  transform: translateY(-10px);
+  transform: translateX(-10px);
   opacity: 0;
 }
 </style>
