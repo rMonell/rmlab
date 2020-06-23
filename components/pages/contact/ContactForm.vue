@@ -1,12 +1,12 @@
 <template>
       <form @submit="handleSubmit">
-        <div class="flex mb-lg">
+        <div class="flex flex-col mb-lg md:flex-row">
           <app-textfield
               @input="val => fullname = val"
               name="fullname"
               :value="fullname"
               :label="fullnameLabel"
-              class="mr-lg w-full md:w-2/5"
+              class="mb-lg w-full md:mb-0 md:mr-lg"
           />
           <app-textfield
               @input="val => email = val"
@@ -23,11 +23,13 @@
             :value="message"
             :label="messageLabel"
             tag="textarea"
-            class="mb-lg h-24"
+            class="mb-xl h-24"
         />
-        <app-button type="submit" class="w-full" :waiting="isWaiting">{{ send }}</app-button>
-        <p v-if="error" class="text-base text-red-500 mt-lg">{{ errorMessage }}</p>
-        <p v-if="success" class="text-base text-green-500 mt-lg">{{ successMessage }}</p>
+        <app-button type="submit" class="w-full" :waiting="isWaiting" animated>{{ send }}</app-button>
+        <transition name="slide-fade">
+          <p v-if="error" class="text-base text-red-500 mt-lg">{{ errorMessage }}</p>
+          <p v-if="success" class="text-base text-green-500 mt-lg">{{ successMessage }}</p>
+        </transition>
       </form>
 </template>
 
@@ -103,3 +105,13 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+.slide-fade-enter-active { transition: all .3s ease }
+.slide-fade-leave-active { transition: all .3s ease }
+
+.slide-fade-enter, .slide-fade-leave-to {
+  transform: translateY(-10px);
+  opacity: 0;
+}
+</style>
