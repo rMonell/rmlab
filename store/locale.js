@@ -35,6 +35,7 @@ export const state = () => ({
                 title: 'Mes projets',
                 role: 'Rôle',
                 year: 'Année',
+                more: 'Voir le projet',
                 next: 'Suivant',
                 previous: 'Précedent'
             },
@@ -42,6 +43,7 @@ export const state = () => ({
                 title: 'My projects',
                 role: 'Role',
                 year: 'year',
+                more: 'View project',
                 next: 'Next',
                 previous: 'Previous'
             }
@@ -51,6 +53,7 @@ export const state = () => ({
                 title: 'Me contacter',
                 fullname: 'Nom complet',
                 email: 'Email',
+                subject: 'Sujet',
                 message: 'Message',
                 send: 'Envoyer',
                 error: 'Tous les champs doivent être remplis',
@@ -60,6 +63,7 @@ export const state = () => ({
                 title: 'Contact me',
                 fullname: 'Full name',
                 email: 'Email',
+                subject: 'Subject',
                 message: 'Message',
                 send: 'Send',
                 error: 'All the fields are required.',

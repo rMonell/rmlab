@@ -2,7 +2,7 @@
   <component
     :is="tag"
     :type="type"
-    :class="`overflow-hidden h-12 border-2 text-sm font-bold uppercase focus:outline-none transition-colors duration-300 ${themeClassName}`"
+    :class="`overflow-hidden h-12 px-lg border-2 text-sm font-bold uppercase focus:outline-none transition-colors duration-300 ${themeClassName}`"
     ref="button"
     @click="onClick"
   >
@@ -34,6 +34,10 @@ export default {
       type: Boolean,
       default: false
     },
+    animated: {
+      type: Boolean,
+      default: false
+    },
     onClick: {
       type: Function,
       default: () => {}
@@ -48,6 +52,7 @@ export default {
     }
   },
   mounted() {
+    if (this.animated) {
       const timeline = gsap.timeline() 
       const easing = 'Expo.easeInOut'
 
@@ -67,6 +72,7 @@ export default {
           { duration: 1.5, y: '100%', ease: easing },
           '-=1.25'
       )
+    }
   }
 };
 </script>

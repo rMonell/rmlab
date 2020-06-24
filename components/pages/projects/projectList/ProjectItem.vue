@@ -28,7 +28,7 @@
           </div>
         </div>
       </div>
-      <app-button class="ml-xl" tag="a" :onClick="handleClick" :href="`/projects/${item.fields.slug}`">En savoir plus</app-button>
+      <app-button class="ml-xl" tag="a" :onClick="handleClick" :href="`/projects/${item.fields.slug}`">{{ more }}</app-button>
     </div>
   </article>
 </template>
@@ -78,6 +78,9 @@ export default {
     },
     year() {
       return this.$store.state.locale.staticTrans.projects[this.$store.state.locale.value].year
+    },
+    more() {
+      return this.$store.state.locale.staticTrans.projects[this.$store.state.locale.value].more
     }
   },
   methods: {
