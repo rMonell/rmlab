@@ -18,6 +18,14 @@
           />
         </div>
         <app-textfield
+            @input="val => subject = val"
+            name="subject"
+            type="text"
+            :value="subject"
+            :label="subjectLabel"
+            class="w-full mb-lg"
+        />
+        <app-textfield
             @input="val => message = val"
             name="message"
             :value="message"
@@ -49,6 +57,7 @@ export default {
       fullname: '',
       email: '',
       message: '',
+      subject: '',
       isWaiting: false,
       error: false,
       success: false
@@ -60,6 +69,9 @@ export default {
     },
     emailLabel() {
       return this.$store.state.locale.staticTrans.contact[this.$store.state.locale.value].email + ' *';
+    },
+    subjectLabel() {
+      return this.$store.state.locale.staticTrans.contact[this.$store.state.locale.value].subject + ' *';
     },
     messageLabel() {
       return this.$store.state.locale.staticTrans.contact[this.$store.state.locale.value].message + ' *';
@@ -84,7 +96,8 @@ export default {
       const params = {
         fullname: this.fullname,
         email: this.email,
-        message: this.message
+        message: this.message,
+        subject: this.subject
       }
 
       this.error = false
@@ -92,7 +105,7 @@ export default {
 
       event.preventDefault()
 
-      if (this.fullname === '' || this.email === '' || this.message === '') {
+      if (this.fullname === '' || this.email === '' || this.message === '' || this.subject === '') {
         if (this.success) this.success = false
 
         this.isWaiting = false
