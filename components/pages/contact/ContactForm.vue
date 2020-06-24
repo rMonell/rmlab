@@ -105,6 +105,8 @@ export default {
 
       event.preventDefault()
 
+      this.fullname = ''
+
       if (this.fullname === '' || this.email === '' || this.message === '' || this.subject === '') {
         if (this.success) this.success = false
 
@@ -116,6 +118,11 @@ export default {
 
           this.isWaiting = false
           this.success = true
+
+          this.fullname = ''
+          this.email = ''
+          this.message = ''
+          this.subject = ''
         })
       }
     }

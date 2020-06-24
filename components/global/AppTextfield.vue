@@ -6,6 +6,7 @@
             :value="value"
             :name="name"
             :type="type"
+            ref="input"
             class="bg-transparent border-none resize-none px-md h-full focus:outline-none w-full py-md"
             @input="$emit('input', $event.target.value)"
             @focus="isFocused = true"
@@ -45,13 +46,21 @@ export default {
         return { isFocused: false }
     },
     watch: {
+        value() {
+            this.$refs['input'].value = this.value
+
+            if (this.value === '') {
+                this.isFocused = false
+                this.handleBlur()
+            }
+        },
         isFocused() {        
            this.isFocused && this.$refs['textfield'].classList.add('is-focused', 'has-label')
         }
     },
     methods: {
         handleBlur() {
-            event.target.value === '' && this.$refs['textfield'].classList.remove('has-label')
+            this.$refs['input'].value === '' && this.$refs['textfield'].classList.remove('has-label')
 
             this.isFocused = false
             this.$refs['textfield'].classList.remove('is-focused')
