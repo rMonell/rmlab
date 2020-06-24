@@ -116,6 +116,11 @@ export default {
 
           this.isWaiting = false
           this.success = true
+
+          this.fullname = ''
+          this.email = ''
+          this.message = ''
+          this.subject = ''
         })
       }
     }
