@@ -42,6 +42,7 @@
 </template>
 
 <script>
+import emailjs from 'emailjs-com'
 import axios from 'axios'
 
 import AppTextfield from "~/components/global/AppTextfield";
@@ -60,7 +61,7 @@ export default {
       subject: '',
       isWaiting: false,
       error: false,
-      success: false
+      success: false,
     }
   },
   computed: {
@@ -76,13 +77,8 @@ export default {
     messageLabel() {
       return this.$store.state.locale.staticTrans.contact[this.$store.state.locale.value].message + ' *';
     },
-    send: {
-      get() {
-        return this.$store.state.locale.staticTrans.contact[this.$store.state.locale.value].send;
-      },
-      set(val) {
-        return val
-      }
+    send() {
+      return this.$store.state.locale.staticTrans.contact[this.$store.state.locale.value].send;
     },
     errorMessage() {
       return this.$store.state.locale.staticTrans.contact[this.$store.state.locale.value].error;
@@ -94,11 +90,15 @@ export default {
   methods: {
     handleSubmit(event) {
       const params = {
-        fullname: this.fullname,
-        email: this.email,
+        from_name: this.fullname,
+        from_email: this.email,
+        subject: this.subject,
         message: this.message,
-        subject: this.subject
       }
+
+      const serviceId = 'gmail'
+      const templateId = 'rmlab'
+      const userId = 'user_r8FGjOVBIMcsYObU4igli'
 
       this.error = false
       this.isWaiting = true
@@ -111,7 +111,7 @@ export default {
         this.isWaiting = false
         this.error = true
       } else {
-        axios.post('https://fieldgoal.io/f/BIdlvm', null, { params: params }).then(() => {
+        emailjs.send(serviceId, templateId, params, userId).then(() => {
           if (this.error) this.error = false
 
           this.isWaiting = false
