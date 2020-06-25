@@ -19,7 +19,7 @@
           <div class="mb-xl overflow-hidden">
             <div class="flex justify-between w-full" ref="projectInfos">
               <div>
-                <h2 class="text-sm font-bold">{{ role }}</h2>
+                <h2 class="text-sm font-bold uppercase">{{ role }}</h2>
                 <div class="flex">
                   <div v-for="(role, key) in item.role" :key="key">
                     <span class="text-sm">{{ role.fields.name }}</span>
@@ -28,7 +28,7 @@
                 </div>
               </div>
               <div>
-                <h2 class="text-sm font-bold">{{ year }}</h2>
+                <h2 class="text-sm font-bold uppercase">{{ year }}</h2>
                 <span class="text-sm">{{ item.year }}</span>
               </div>
             </div>
