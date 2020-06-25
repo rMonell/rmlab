@@ -9,10 +9,10 @@
     </div>
     <div class="flex flex-col justify-center items-start w-4/5 sm:w-3/5 md:w-2/5 z-10 -ml-lg" ref="projectContent">
       <div>
-        <h1 class="text-5xl md:text-6xl text-3xl font-bold leading-tight uppercase mb-md text-shadow">{{ item.fields.name }}</h1>
+        <h1 class="text-5xl md:text-6xl font-bold leading-tight uppercase mb-md text-shadow">{{ item.fields.name }}</h1>
         <div class="mb-lg ml-xl flex">
           <div class="mr-lg">
-            <h2 class="font-bold text-base">{{ role }}</h2>
+            <h2 class="text-sm font-bold uppercase">{{ role }}</h2>
             <div class="flex">
               <div v-for="(role, key) in item.fields.role" :key="key">
                 <span class="text-sm">{{ role.fields.name }}</span>
@@ -21,7 +21,7 @@
             </div>
           </div>
           <div>
-            <h2 class="font-bold text-base">{{ year }}</h2>
+            <h2 class="text-sm font-bold uppercase">{{ year }}</h2>
             <div class="flex">
               <span class="text-sm">{{ item.fields.year }}</span>
             </div>
