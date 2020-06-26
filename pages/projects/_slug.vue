@@ -76,7 +76,10 @@ const client = createClient();
 
 export default {
   head () {
-    return { title: this.item && this.item.name }
+    return {
+      title: this.item && this.item.name,
+      description: this.item && this.item.body
+    }
   },
   components: {
     'magic-title': MagicTitle,

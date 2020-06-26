@@ -21,7 +21,10 @@ const client = createClient();
 
 export default {
   head () {
-    return { title: this.title }
+    return {
+      title: this.title,
+      description: this.description
+    }
   },
   components: {
     'magic-title': MagicTitle,
@@ -29,9 +32,10 @@ export default {
   },
   computed: {
     title() {
-      return this.$store.state.locale.staticTrans.projects[
-        this.$store.state.locale.value
-      ].title;
+      return this.$store.state.locale.staticTrans.projects[this.$store.state.locale.value].head.title;
+    },
+    description() {
+      return this.$store.state.locale.staticTrans.index[this.$store.state.locale.value].head.description
     }
   },
   asyncComputed: {

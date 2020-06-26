@@ -32,19 +32,19 @@ export default {
             return [
                 {
                     path: '/',
-                    value: this.$store.state.locale.staticTrans.index[locale].title
+                    value: this.$store.state.locale.staticTrans.index[locale].custom_title
                 },
                 {
                     path: '/about',
-                    value: this.$store.state.locale.staticTrans.about[locale].title
+                    value: this.$store.state.locale.staticTrans.about[locale].head.title
                 },
                 {
                     path: '/projects',
-                    value: this.$store.state.locale.staticTrans.projects[locale].title
+                    value: this.$store.state.locale.staticTrans.projects[locale].head.title
                 },
                 {
                     path: '/contact',
-                    value: this.$store.state.locale.staticTrans.contact[locale].title
+                    value: this.$store.state.locale.staticTrans.contact[locale].head.title
                 }
             ]
         }

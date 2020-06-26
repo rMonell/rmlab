@@ -46,7 +46,10 @@ import MagicTitle from '~/components/global/MagicTitle.vue'
 
 export default {
     head () {
-        return { title: `Renaud Monell - ${this.specialization}` }
+        return {
+            title: this.title,
+            description: this.description
+        }
     },
 
     components: {
@@ -55,6 +58,12 @@ export default {
     },
 
     computed: {
+        title() {
+            return this.$store.state.locale.staticTrans.index[this.$store.state.locale.value].head.title
+        },
+        description() {
+            return this.$store.state.locale.staticTrans.index[this.$store.state.locale.value].head.description
+        },
         specialization() {
             return this.$store.state.locale.staticTrans.index[this.$store.state.locale.value].specialization
         },
