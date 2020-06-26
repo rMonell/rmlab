@@ -22,6 +22,10 @@ import MagicTitle from "~/components/global/MagicTitle.vue";
 const client = createClient();
 
 export default {
+  head () {
+    return { title: this.title }
+  },
+  
   components: {
     'magic-title': MagicTitle
   },

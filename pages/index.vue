@@ -45,6 +45,10 @@ import { Fragment } from 'vue-fragment'
 import MagicTitle from '~/components/global/MagicTitle.vue'
 
 export default {
+    head () {
+        return { title: `Renaud Monell - ${this.specialization}` }
+    },
+
     components: {
         'magic-title': MagicTitle,
         'fragment': Fragment

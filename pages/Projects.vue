@@ -20,6 +20,9 @@ import ProjectList from "~/components/pages/projects/projectList/ProjectList.vue
 const client = createClient();
 
 export default {
+  head () {
+    return { title: this.title }
+  },
   components: {
     'magic-title': MagicTitle,
     'project-list': ProjectList

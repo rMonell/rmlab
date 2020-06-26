@@ -15,8 +15,12 @@
 
 <script>
 export default {
+  head() {
+    return { title: this.documentTitle }
+  },
   data() {
     return {
+      documentTitle: 'rmlab',
       navigator: new this.$Navigator(this.$store, this.$router),
       y: 0,
       canRenderSlot: true
@@ -33,13 +37,14 @@ export default {
   },
   watch: {
     route() {
+      this.documentTitle = document.querySelector('title').innerHTML
       this.canRenderSlot = false
+      
       setTimeout(() => this.canRenderSlot = true, 750);
     }
   },
   methods: {
     handleScroll(event) {
-
       if (!this.$route.params.slug) {
         event.deltaY > 0
           ? this.navigator.next(this.$store)

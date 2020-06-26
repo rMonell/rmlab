@@ -17,6 +17,10 @@ import MagicTitle from "~/components/global/MagicTitle";
 import ContactForm from "~/components/pages/contact/ContactForm";
 
 export default {
+  head () {
+    return { title: this.title }
+  },
+  
   components: {
     'magic-title': MagicTitle,
     'contact-form': ContactForm,
