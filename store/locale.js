@@ -34,7 +34,7 @@ export const state = () => ({
             'fr-FR': {
                 head: {
                     title: 'Renaud Monell - Développeur Front-end',
-                    description: "Je m'appelle Renaud, j'ai 23 ans et actuellement développeur web front-end pour un éditeur de logiciels basé à Marseille."
+                    description: "Portfolio de Renaud Monell, Développeur front-end."
                 },
                 custom_title: 'Accueil',
                 specialization: 'Développeur Front-end',
@@ -43,7 +43,7 @@ export const state = () => ({
             'en-US': {
                 head: {
                     title: 'Renaud Monell - Front-end Developper',
-                    description: "Je m'appelle Renaud, j'ai 23 ans et actuellement développeur web front-end pour un éditeur de logiciels basé à Marseille."
+                    description: "Renaud Monell Portfolio, Front-end developer."
                 },
                 custom_title: 'Home',
                 specialization: 'Front-end Developper',
