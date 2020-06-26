@@ -25,11 +25,9 @@ import { gsap } from "gsap/dist/gsap";
 export default {
     computed: {
         locale() {
-            const result = this.$store.state.locale.value === 'fr-FR' ? 'en-US' : 'fr-FR'
-
             return {
-                text: result.slice(0, 2).toUpperCase(),
-                value: result
+                text: this.$store.state.locale.value === 'fr-FR' ? 'English version' : 'Version Française',
+                value: this.$store.state.locale.value === 'fr-FR' ? 'en-US' : 'fr-FR'
             }
         }
     },
