@@ -20,15 +20,22 @@ import ProjectList from "~/components/pages/projects/projectList/ProjectList.vue
 const client = createClient();
 
 export default {
+  head () {
+    return {
+      title: this.title,
+      description: this.description
+    }
+  },
   components: {
     'magic-title': MagicTitle,
     'project-list': ProjectList
   },
   computed: {
     title() {
-      return this.$store.state.locale.staticTrans.projects[
-        this.$store.state.locale.value
-      ].title;
+      return this.$store.state.locale.staticTrans.projects[this.$store.state.locale.value].head.title;
+    },
+    description() {
+      return this.$store.state.locale.staticTrans.index[this.$store.state.locale.value].head.description
     }
   },
   asyncComputed: {

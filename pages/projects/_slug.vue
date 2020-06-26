@@ -75,6 +75,12 @@ import NetButton from "~/components/global/NetButton";
 const client = createClient();
 
 export default {
+  head () {
+    return {
+      title: this.item && this.item.name,
+      description: this.item && this.item.body
+    }
+  },
   components: {
     'magic-title': MagicTitle,
     'net-button': NetButton

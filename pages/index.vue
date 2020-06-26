@@ -45,12 +45,25 @@ import { Fragment } from 'vue-fragment'
 import MagicTitle from '~/components/global/MagicTitle.vue'
 
 export default {
+    head () {
+        return {
+            title: this.title,
+            description: this.description
+        }
+    },
+
     components: {
         'magic-title': MagicTitle,
         'fragment': Fragment
     },
 
     computed: {
+        title() {
+            return this.$store.state.locale.staticTrans.index[this.$store.state.locale.value].head.title
+        },
+        description() {
+            return this.$store.state.locale.staticTrans.index[this.$store.state.locale.value].head.description
+        },
         specialization() {
             return this.$store.state.locale.staticTrans.index[this.$store.state.locale.value].specialization
         },
