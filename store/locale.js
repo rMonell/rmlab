@@ -10,11 +10,31 @@ export const state = () => ({
                 goBack: 'Go back',
             }
         },
+        error: {
+            'fr-FR': {
+                head: {
+                    title: {
+                        '404': 'Page introuvable',
+                        error: "Erreur"
+                    },
+                    description: {
+                        '404': "Le page demandé est introuvable",
+                        error: "Une erreur s'est produite lors du chargement de la page."
+                    }
+                },
+            },
+            'en-US': {
+                head: {
+                    title: 'Page not found',
+                    description: "The requested page could not be found"
+                },
+            }
+        },
         index: {
             'fr-FR': {
                 head: {
                     title: 'Renaud Monell - Développeur Front-end',
-                    desciption: "Je m'appelle Renaud, j'ai 23 ans et actuellement développeur web front-end pour un éditeur de logiciels basé à Marseille."
+                    description: "Je m'appelle Renaud, j'ai 23 ans et actuellement développeur web front-end pour un éditeur de logiciels basé à Marseille."
                 },
                 custom_title: 'Accueil',
                 specialization: 'Développeur Front-end',
@@ -23,7 +43,7 @@ export const state = () => ({
             'en-US': {
                 head: {
                     title: 'Renaud Monell - Front-end Developper',
-                    desciption: "Je m'appelle Renaud, j'ai 23 ans et actuellement développeur web front-end pour un éditeur de logiciels basé à Marseille."
+                    description: "Je m'appelle Renaud, j'ai 23 ans et actuellement développeur web front-end pour un éditeur de logiciels basé à Marseille."
                 },
                 custom_title: 'Home',
                 specialization: 'Front-end Developper',
@@ -40,7 +60,7 @@ export const state = () => ({
             'en-US': {
                 head: {
                     title: 'About',
-                    desciption: "My name is Renaud, I'm 23 years old and currently a front-end web developer for a software publisher based in Marseille."
+                    description: "My name is Renaud, I'm 23 years old and currently a front-end web developer for a software publisher based in Marseille."
                 },
             }
         },
@@ -48,7 +68,7 @@ export const state = () => ({
             'fr-FR': {
                 head: {
                     title: 'Mes projets',
-                    desciption: "Découvrez les projets sur lesquels j'ai eu l'occasion de travailler."
+                    description: "Découvrez les projets sur lesquels j'ai eu l'occasion de travailler."
                 },
                 role: 'Rôle',
                 year: 'Année',
@@ -59,7 +79,7 @@ export const state = () => ({
             'en-US': {
                 head: {
                     title: 'My projects',
-                    desciption: "Discover the projects I have had the opportunity to work on."
+                    description: "Discover the projects I have had the opportunity to work on."
                 },
                 role: 'Role',
                 year: 'year',
@@ -72,7 +92,7 @@ export const state = () => ({
             'fr-FR': {
                 head: {
                     title: 'Me contacter',
-                    desciption: "Une demande particulière ? n'hésitez pas à me contacter directement par formulaire."
+                    description: "Une demande particulière ? n'hésitez pas à me contacter directement par formulaire."
                 },
                 fullname: 'Nom complet',
                 email: 'Email',
@@ -85,7 +105,7 @@ export const state = () => ({
             'en-US': {
                 head: {
                     title: 'Contact me',
-                    desciption: "Any special request ? do not hesitate to contact me directly by form."
+                    description: "Any special request ? do not hesitate to contact me directly by form."
                 },
                 fullname: 'Full name',
                 email: 'Email',
