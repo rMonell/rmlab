@@ -51,12 +51,10 @@ export default {
             description: this.description
         }
     },
-
     components: {
         'magic-title': MagicTitle,
         'fragment': Fragment
     },
-
     computed: {
         title() {
             return this.$store.state.locale.staticTrans.index[this.$store.state.locale.value].head.title
@@ -71,7 +69,6 @@ export default {
             return this.$store.state.locale.staticTrans.index[this.$store.state.locale.value].scrollIndication
         }
     },
-
     mounted() {
         const { fill } = this.$refs
         const timeline = gsap.timeline() 

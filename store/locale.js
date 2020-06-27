@@ -25,8 +25,14 @@ export const state = () => ({
             },
             'en-US': {
                 head: {
-                    title: 'Page not found',
-                    description: "The requested page could not be found"
+                    title: {
+                        '404': 'Page not found',
+                        error: "Error"
+                    },
+                    description: {
+                        '404': "The requested page could not be found",
+                        error: "An error occurred while loading the page."
+                    }
                 },
             }
         },
@@ -34,7 +40,7 @@ export const state = () => ({
             'fr-FR': {
                 head: {
                     title: 'Renaud Monell - Développeur Front-end',
-                    description: "Portfolio de Renaud Monell, Développeur front-end."
+                    description: "Portfolio de Renaud Monell, Développeur front-end Marseillais."
                 },
                 custom_title: 'Accueil',
                 specialization: 'Développeur Front-end',
@@ -43,7 +49,7 @@ export const state = () => ({
             'en-US': {
                 head: {
                     title: 'Renaud Monell - Front-end Developper',
-                    description: "Renaud Monell Portfolio, Front-end developer."
+                    description: "Renaud Monell Portfolio, Front-end developer from Marseille."
                 },
                 custom_title: 'Home',
                 specialization: 'Front-end Developper',
