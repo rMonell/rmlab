@@ -1,91 +1,92 @@
-var path = require('path');
+var path = require("path");
 
 export default {
-  mode: 'universal',
+  mode: "universal",
   /*
-  ** Headers of the page
-  */
+   ** Headers of the page
+   */
   head: {
-    title: 'Renaud Monell - Développeur front-end',
+    htmlAttrs: {
+      lang: "fr"
+    },
+    title: "Renaud Monell - Développeur front-end",
     meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Portfolio de Renaud Monell, Développeur front-end Marseillais' }
+      { charset: "utf-8" },
+      { name: "viewport", content: "width=device-width, initial-scale=1" },
+      {
+        hid: "description",
+        name: "description",
+        content: "Portfolio de Renaud Monell, Développeur front-end Marseillais"
+      }
     ],
-    link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    ]
+    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
   },
   /*
-  ** Customize the progress-bar color
-  */
+   ** Customize the progress-bar color
+   */
   loading: false,
   /*
-  ** Global CSS
-  */
-  css: [
-    '@/assets/css/tailwind.scss'
-  ],
+   ** Global CSS
+   */
+  css: ["@/assets/css/tailwind.scss"],
   /*
-  ** Environement variables
-  */
+   ** Environement variables
+   */
   env: {
-    CTF_SPACE_ID: 'y02g29aioh2y',
-    CTF_CDA_ACCESS_TOKEN: '7YKQKqHsIlseetCVE-wmWbZxh7megRf1n8llzwWFTiY'
+    CTF_SPACE_ID: "y02g29aioh2y",
+    CTF_CDA_ACCESS_TOKEN: "7YKQKqHsIlseetCVE-wmWbZxh7megRf1n8llzwWFTiY"
   },
   /*
-  ** Plugins to load before mounting the App
-  */
+   ** Plugins to load before mounting the App
+   */
   plugins: [
-    '~/plugins/navigator.js',
-    '~/plugins/vue-touch-events.js',
-    '~/plugins/vue-async-computed.js',
+    "~/plugins/navigator.js",
+    "~/plugins/vue-touch-events.js",
+    "~/plugins/vue-async-computed.js"
   ],
   /*
-  ** Nuxt.js dev-modules
-  */
-  buildModules: [
-  ],
+   ** Nuxt.js dev-modules
+   */
+  buildModules: [],
   /*
-  ** Nuxt.js modules
-  */
+   ** Nuxt.js modules
+   */
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios',
-    '@nuxtjs/pwa',
+    "@nuxtjs/axios",
+    "@nuxtjs/pwa",
     // Doc: https://github.com/nuxt-community/dotenv-module
-    '@nuxtjs/dotenv',
-    'nuxt-purgecss'
+    "@nuxtjs/dotenv",
+    "nuxt-purgecss"
   ],
   purgeCSS: {
-    mode: 'postcss',
-    enabled: (process.env.NODE_ENV === 'production'),
+    mode: "postcss",
+    enabled: process.env.NODE_ENV === "production",
     content: [
-      'components/**/*.vue',
-      'layouts/**/*.vue',
-      'pages/**/*.vue',
-      'nuxt.config.js'
+      "components/**/*.vue",
+      "layouts/**/*.vue",
+      "pages/**/*.vue",
+      "nuxt.config.js"
     ]
   },
   /*
-  ** Axios module configuration
-  ** See https://axios.nuxtjs.org/options
-  */
-  axios: {
-  },
+   ** Axios module configuration
+   ** See https://axios.nuxtjs.org/options
+   */
+  axios: {},
   /*
-  ** Build configuration
-  */
+   ** Build configuration
+   */
   build: {
     extend(config, ctx) {},
     extractCSS: true,
     postcss: {
       plugins: {
-        tailwindcss: path.resolve(__dirname, './tailwind.config.js')
+        tailwindcss: path.resolve(__dirname, "./tailwind.config.js")
       }
     },
     purgeCSS: {
-      mode: 'postcss'
+      mode: "postcss"
     }
   }
-}
+};
